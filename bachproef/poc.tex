@@ -147,7 +147,7 @@ Dit is zowat de basis van de werking van de botbuilder. Er zijn hier dus nog vee
 \section{Uitwerking}
 \label{sec:Uitwerking}
 
-Eerst en vooral was het werkende krijgen van de botbuilder en daarna het linken van LUIS hieraan een eerste stap. Hoe LUIS wordt gelinkt met de botbuilder is uitgelegd in het vorige hoofdstuk. Hoe de verschillende intents van LUIS gelinkt zijn met de dialog zit nog een beetje anders in mekaar dan een simpele dialog voor het vragen en opslaan van een naam.
+Een eerste stap was het werkende krijgen van de botbuilder en daarna het linken van LUIS hieraan. Hoe LUIS wordt gelinkt met de botbuilder is uitgelegd in het vorige hoofdstuk. Hoe de verschillende intents van LUIS gelinkt zijn met de dialog zit nog een beetje anders in mekaar dan een simpele dialog voor het vragen en opslaan van een naam. per intent is er één dialog nodig en deze moet hieraan worden gelinkt. De code in Listing 4.4 is een basis dialog voor de intent 'AddMore'. Als deze intent wordt aangeroepen zal de gebruiker een bericht terug krijgen met de boodschap 'You reached AddMore intent'. Op deze manier kan er al gecontroleerd worden of de intents van LUIS juist gelinkt worden met de dialogs. Als er in de emultor bijvoorbeeld een zin wordt ingegeven 'Please add 5 more', dan zal de botbuilder het AddMore intent terug krijgen en zal deze willen linken aan de juiste dialog. Dit gebeurd door de 'triggerAction' te matchen aan de intent. De triggerAction zal bij dit voorbeeld zijn 'AddMore' en het antwoord van LUIS is ook 'AddMore'. Op deze manier zal de botbuilder kijken of dit ergens gelijk is, hier is dit het geval en zal deze bepaalde dialog aanroepen en de gepaste functies uitvoeren en uiteindelijk een boodschap terugsturen naar de gebruiker.
 
 \medskip
 \begin{lstlisting}[caption=Waterval methode]
@@ -159,7 +159,59 @@ bot.dialog("/addMore", (sess, args) => {
 });
 \end{lstlisting}
 
-%intent en entities uit de sess halen
+De intent zelf en de entities kunnen makkelijk worden verkregen uit de args van de dialog. Bijvoorbeeld voor de volgende zin 'You need the AddMore met entity 5' als je ingeeft als input 'Add 5 more' te verkrijgen kan je simpelweg volgende lijn code gebruiken.
 
-%API
+\medskip
+\begin{lstlisting}[caption=gebruiken van args]
+sess.send(`You need the "${args.intent.intent}" intent ${sess.dialogData.number === null ? '' : 'met entity ' + sess.dialogData.number.entity}`);
+\end{lstlisting}
+
+De 'sess.dialogData.number' komt uit de lokale opslag. Door elke intent te analyseren door de code in Listing 4.6 worden de entities uit uit de utterance gehaald en opgeslagen per dialog zodat deze gemakkelijk toegankelijk zijn voor verder te kunnen werken om uiteindelijk feedback te kunnen geven naar de gebruiker toe. 
+
+\medskip
+\begin{lstlisting}[caption=Analyseren van de intent]
+function normalizeAndStoreData(sess: builder.Session, args: any): void {
+	sess.dialogData.name = builder.EntityRecognizer.findEntity(args.intent.entities, "Name");
+	sess.dialogData.product = builder.EntityRecognizer.findEntity(args.intent.entities, "Product");
+	sess.dialogData.number = builder.EntityRecognizer.findEntity(args.intent.entities, "builtin.number");
+}
+\end{lstlisting}
+
+Als alles correct werkt, LUIS die de input van de gebruiker aan de correcte intent linkt, de botbuilder die de intent van LUIS terugkrijgt die bij deze input past en dan de juiste dialog zal aanspreken met behulp van de intent van LUIS, de entities hier correct uithalen en een gepaste boodschap terugsturen naar de gebruiker zal er uiteindelijk kunnen overgegaan worden naar de kern voor de zaak. Dat is het automatisch aanleren van LUIS aan de hand van de input van de gebruikers zodat de 'Review endpoint utterances' op de site van LUIS zelf zo leeg mogelijk blijft.
+
+Dit zal gebeuren door de boodschap zelf en de intents in de dialog door te geven naar een functie die zal controleren of deze bepaalde input kan worden toegevoegd in LUIS. Dat zal worden gedaan door de eerste en de tweede intent die LUIS meegeeft met een bepaalde input te controleren. Indien de eerste en de tweede intent zeer sterk verschillen van elkaar en als het percentage van de eerste intent hoog genoeg is zal deze input worden toegevoegd als utterance bij deze eerste intent.
+
+Door dat te doen zullen voor van de inputs niet meer bij de 'review endpoint utterances' komen en zullen er veel minder utterances moeten gecontroleerd worden, wat uiteindelijk het doel is van dit onderzoek.
+
+Deze functie controleert eerste de scores van de intents met elkaar en kijkt of deze voldoet aan de voorwaarden. De parameters kunnen altijd nog aangepast worden, deze worden onderzocht en geoptimaliseerd in het volgende hoofdstuk. Indien de voorwaarde voor het toevoegen van de input aan LUIS niet voldoen zal er niets gebeuren. Daardoor zal LUIS deze input toevoegen aan de 'Review endpoint utterances' tabblad zodat deze manueel kan bekeken worden. Als deze wel voldoet zal de API van LUIS worden aangesproken voor het toevoegen van deze input in LUIS.
+
+De code voor het aanspreken van het endpoint bevindt zich inListing 4.7. De body die de API verwacht moet in een bepaald formaat staat zodat deze begrepen wordt en de API deze kan verwerken. Eerst en vooral wordt dan het enpoint aangesproken van de API call met de juiste link. Met dit endpoint moeten een aantal parameters worden meegegeven. Eerst en vooral de methode, hierbij is dat een POST, er wordt data meegestuurd. Ook zijn er headers nodig. De eerste header is voor het formaat aan te duiden, hier is dat json. De tweede header is de subscription key voor de authenticatie. Als laatste en belangrijkste moet er een body worden meegegeven. Die body bevat een text, dat is de utterance zelf. De intentName is de intent waarbij deze utterance hoort, deze intentName wordt uit de intent gehaald die wordt meegegeven naar de functie. Als laatste kunnen er entities worden meegegeven die horen bij de intent met de locatie waar deze zich bevinden in de utterance. Dit is niet noodzakelijk want LUIS zoekt vanzelf de entities in een zin dus dit kan eventueel achterwege gelaten worden.
+
+\medskip
+\begin{lstlisting}[caption=Toevoegen van een input aan LUIS van een API call]
+fetch('https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/3480e277-67b8-4cb9-af10-f7db6ce55d63/versions/0.1/example', {
+	method: 'POST',
+	body: JSON.stringify({
+		"text": text,
+		"intentName": intent.intents[0].intent,
+		"entityLabels": [
+			getEntities(intent.entities),
+		]
+	}),
+	headers: {
+		'Content-type': 'application/json',
+		'Ocp-Apim-Subscription-Key': key
+	}
+})
+	.then((res: Response) => {
+		return res.json();
+	})
+	.then((json) => {
+		console.log('Result fetch succes', json);
+	})
+.catch(() => console.log('Calling POST example has crashed'));
+\end{lstlisting}
+
+Dit is zowat het grootste werk voor het realiseren en uitwerken van de onderzoeksvraag. Hoe efficient dit alles is zal worden getest in het volgende hoofdstuk. Er zullen een aantal zinnen opgesteld worden die zullen worden meegegeven met LUIS zonder en met dit uitgewerkte systeem en zo zal er gekeken worden hoe efficient dit systeem is. Ook zal er gekeken worden naar de effectieve utterances die bij 'Review endpoint utterances' komen met en zonder het uitgewerkte systeem. Het optimaliseren van dit systeem zal zich ook in dit hoofdstuk bevinden, dit zal gebeuren door bepaalde parameters aan te passen zodat er een optimaal resultaat zal bekomen worden.
+
 %%chapter testen en grafieken en percentages van aantal automatisch
