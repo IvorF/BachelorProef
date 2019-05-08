@@ -33,15 +33,15 @@
   url     = {https://medium.com/@Giuul/wit-ai-and-how-to-use-it-72372b07d98b},
 }
 
-@Article{5,
-	author  = {Assaf Elovic},
-	title   = {Chatbots — The Beginners Guide},
-	journal = {chatbots magazine},
-	year    = {2017},
-	url     = {https://chatbotsmagazine.com/chatbots-the-beginners-guide-618e72599b55},
+@Article{assaf2017,
+  author  = {Elovic, Assaf},
+  title   = {Chatbots  the beginners guide},
+  journal = {chatbots magazine},
+  year    = {2017},
+  url     = {https://chatbotsmagazine.com/chatbots-the-beginners-guide-618e72599b55},
 }
 
-@Article{6,
+@Article{Dave2018,
 	author  = {Dave Doijer},
 	title   = {Chatbots zijn de trend: wat weet jij al over deze bots?},
 	journal = {kgom},
@@ -49,20 +49,60 @@
 	url     = {https://kgom.nl/24/chatbots-zijn-de-trend-wat-weet-jij-al-over-deze-bots/},
 }
 
-@Article{,
-	author  = {},
-	title   = {},
-	journal = {},
-	year    = {201},
-	url     = {},
+@Article{Kumar2017,
+	author  = {Kumar Shridhar},
+	title   = {Rule bases bots vs AI bots},
+	journal = {medium},
+	year    = {2017},
+	url     = {https://medium.com/botsupply/rule-based-bots-vs-ai-bots-b60cdb786ffa},
 }
 
-@Article{,
-	author  = {},
-	title   = {},
-	journal = {},
-	year    = {201},
-	url     = {},
+@Article{Margaret2018,
+	author  = {Margaret Rouse},
+	title   = {natural language understanding (NLU)},
+	journal = {Search Enterprise AI},
+	year    = {2018},
+	url     = {https://searchenterpriseai.techtarget.com/definition/natural-language-understanding-NLU},
+}
+
+@Article{Kevin2017,
+	author  = {Kevin Hsu},
+	title   = {ChatWeb: Build Websites that understand users with full (free) Microsoft Stack},
+	journal = {hackernoon},
+	year    = {2017},
+	url     = {https://hackernoon.com/chatweb-build-websites-that-understand-users-with-full-free-microsoft-stack-dc07ce18b19d},
+}
+
+@Article{Eva2016,
+	author  = {Eva Dimitrova},
+	title   = {Bot Wars: Wit.ai vs Chatfuel},
+	journal = {chatbots magazine},
+	year    = {2016},
+	url     = {https://chatbotsmagazine.com/bot-wars-wit-ai-vs-chatfuel-5e978070b9e},
+}
+
+@Article{Dina2019,
+	author  = {Dina Berry},
+	title   = {What is Language Understanding (LUIS)?},
+	journal = {microsoft azure},
+	year    = {2019},
+	url     = {https://docs.microsoft.com/nl-be/azure/cognitive-services/luis/what-is-luis},
+}
+
+@Article{Wit2019,
+	author  = {Wit.ai},
+	title   = {Natural Language for Developers},
+	journal = {wit.ai},
+	year    = {2019},
+	url     = {https://wit.ai},
+}
+
+@Article{Kristian2011,
+	author  = {Kristian van Tuil},
+	title   = {Wat is een API?},
+	journal = {computerworld},
+	year    = {2011},
+	url     = {https://computerworld.nl/development/74796-wat-is-een-api},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}

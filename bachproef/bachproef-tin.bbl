@@ -19,35 +19,133 @@
 
 \refsection{0}
   \datalist[entry]{apa/global//global/global}
-    \entry{Creeger2009}{article}{}
+    \entry{Dina2019}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=e888aba3556efbb8063540e3e2ae69b4}{%
-           family={Creeger},
-           familyi={C\bibinitperiod},
-           given={Mache},
-           giveni={M\bibinitperiod},
+        {{uniquename=0,uniquepart=base,hash=586b5bdb52597a4786ba399f2ea7053d}{%
+           family={Berry},
+           familyi={B\bibinitperiod},
+           given={Dina},
+           giveni={D\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{e888aba3556efbb8063540e3e2ae69b4}
-      \strng{fullhash}{e888aba3556efbb8063540e3e2ae69b4}
-      \strng{bibnamehash}{e888aba3556efbb8063540e3e2ae69b4}
-      \strng{authorbibnamehash}{e888aba3556efbb8063540e3e2ae69b4}
-      \strng{authornamehash}{e888aba3556efbb8063540e3e2ae69b4}
-      \strng{authorfullhash}{e888aba3556efbb8063540e3e2ae69b4}
-      \field{sortinit}{C}
-      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \strng{namehash}{586b5bdb52597a4786ba399f2ea7053d}
+      \strng{fullhash}{586b5bdb52597a4786ba399f2ea7053d}
+      \strng{bibnamehash}{586b5bdb52597a4786ba399f2ea7053d}
+      \strng{authorbibnamehash}{586b5bdb52597a4786ba399f2ea7053d}
+      \strng{authornamehash}{586b5bdb52597a4786ba399f2ea7053d}
+      \strng{authorfullhash}{586b5bdb52597a4786ba399f2ea7053d}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Communications of the ACM}
-      \field{number}{8}
-      \field{title}{{CTO Roundtable: Cloud Computing}}
-      \field{volume}{52}
-      \field{year}{2009}
-      \field{pages}{50\bibrangedash 56}
-      \range{pages}{7}
+      \field{journaltitle}{microsoft azure}
+      \field{title}{What is Language Understanding (LUIS)?}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://docs.microsoft.com/nl-be/azure/cognitive-services/luis/what-is-luis
+      \endverb
+      \verb{url}
+      \verb https://docs.microsoft.com/nl-be/azure/cognitive-services/luis/what-is-luis
+      \endverb
+    \endentry
+    \entry{Eva2016}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=f070bf67a4d0009bfb24d1f87eee6cde}{%
+           family={Dimitrova},
+           familyi={D\bibinitperiod},
+           given={Eva},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f070bf67a4d0009bfb24d1f87eee6cde}
+      \strng{fullhash}{f070bf67a4d0009bfb24d1f87eee6cde}
+      \strng{bibnamehash}{f070bf67a4d0009bfb24d1f87eee6cde}
+      \strng{authorbibnamehash}{f070bf67a4d0009bfb24d1f87eee6cde}
+      \strng{authornamehash}{f070bf67a4d0009bfb24d1f87eee6cde}
+      \strng{authorfullhash}{f070bf67a4d0009bfb24d1f87eee6cde}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{chatbots magazine}
+      \field{title}{Bot Wars: Wit.ai vs Chatfuel}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://chatbotsmagazine.com/bot-wars-wit-ai-vs-chatfuel-5e978070b9e
+      \endverb
+      \verb{url}
+      \verb https://chatbotsmagazine.com/bot-wars-wit-ai-vs-chatfuel-5e978070b9e
+      \endverb
+    \endentry
+    \entry{Dave2018}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=6b15405ca6eb5dc6f939f39aaae570fd}{%
+           family={Doijer},
+           familyi={D\bibinitperiod},
+           given={Dave},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6b15405ca6eb5dc6f939f39aaae570fd}
+      \strng{fullhash}{6b15405ca6eb5dc6f939f39aaae570fd}
+      \strng{bibnamehash}{6b15405ca6eb5dc6f939f39aaae570fd}
+      \strng{authorbibnamehash}{6b15405ca6eb5dc6f939f39aaae570fd}
+      \strng{authornamehash}{6b15405ca6eb5dc6f939f39aaae570fd}
+      \strng{authorfullhash}{6b15405ca6eb5dc6f939f39aaae570fd}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{kgom}
+      \field{title}{Chatbots zijn de trend: wat weet jij al over deze bots?}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://kgom.nl/24/chatbots-zijn-de-trend-wat-weet-jij-al-over-deze-bots/
+      \endverb
+      \verb{url}
+      \verb https://kgom.nl/24/chatbots-zijn-de-trend-wat-weet-jij-al-over-deze-bots/
+      \endverb
+    \endentry
+    \entry{assaf2017}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=a825b24b89b6fe42d11f2a6e55d27702}{%
+           family={Elovic},
+           familyi={E\bibinitperiod},
+           given={Assaf},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a825b24b89b6fe42d11f2a6e55d27702}
+      \strng{fullhash}{a825b24b89b6fe42d11f2a6e55d27702}
+      \strng{bibnamehash}{a825b24b89b6fe42d11f2a6e55d27702}
+      \strng{authorbibnamehash}{a825b24b89b6fe42d11f2a6e55d27702}
+      \strng{authornamehash}{a825b24b89b6fe42d11f2a6e55d27702}
+      \strng{authorfullhash}{a825b24b89b6fe42d11f2a6e55d27702}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{chatbots magazine}
+      \field{title}{Chatbots  the beginners guide}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://chatbotsmagazine.com/chatbots-the-beginners-guide-618e72599b55
+      \endverb
+      \verb{url}
+      \verb https://chatbotsmagazine.com/chatbots-the-beginners-guide-618e72599b55
+      \endverb
     \endentry
     \entry{4}{article}{}
       \name{author}{1}{}{%
@@ -76,6 +174,38 @@
       \endverb
       \verb{url}
       \verb https://medium.com/@Giuul/wit-ai-and-how-to-use-it-72372b07d98b
+      \endverb
+    \endentry
+    \entry{Kevin2017}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=0c1dcba849b6d257fd13cde628ff8397}{%
+           family={Hsu},
+           familyi={H\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0c1dcba849b6d257fd13cde628ff8397}
+      \strng{fullhash}{0c1dcba849b6d257fd13cde628ff8397}
+      \strng{bibnamehash}{0c1dcba849b6d257fd13cde628ff8397}
+      \strng{authorbibnamehash}{0c1dcba849b6d257fd13cde628ff8397}
+      \strng{authornamehash}{0c1dcba849b6d257fd13cde628ff8397}
+      \strng{authorfullhash}{0c1dcba849b6d257fd13cde628ff8397}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{hackernoon}
+      \field{title}{ChatWeb: Build Websites that understand users with full (free) Microsoft Stack}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://hackernoon.com/chatweb-build-websites-that-understand-users-with-full-free-microsoft-stack-dc07ce18b19d
+      \endverb
+      \verb{url}
+      \verb https://hackernoon.com/chatweb-build-websites-that-understand-users-with-full-free-microsoft-stack-dc07ce18b19d
       \endverb
     \endentry
     \entry{2}{article}{}
@@ -110,67 +240,69 @@
       \verb https://www.frankwatching.com/archive/2018/01/03/in-7-stappen-aan-de-slag-met-chatbots/
       \endverb
     \endentry
-    \entry{Knuth1998}{book}{}
+    \entry{Margaret2018}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=fcbea740aeb72b8e941e0d4aa9f6a9c6}{%
-           family={Knuth},
-           familyi={K\bibinitperiod},
-           given={Donald\bibnamedelima E.},
-           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod},
+        {{uniquename=0,uniquepart=base,hash=d6ebb0634de22e70618460d3fc936297}{%
+           family={Rouse},
+           familyi={R\bibinitperiod},
+           given={Margaret},
+           giveni={M\bibinitperiod},
            givenun=0}}%
       }
-      \list{location}{1}{%
-        {Redwood City, CA, USA}%
-      }
-      \list{publisher}{1}{%
-        {Addison Wesley Longman Publishing Co., Inc.}%
-      }
-      \strng{namehash}{fcbea740aeb72b8e941e0d4aa9f6a9c6}
-      \strng{fullhash}{fcbea740aeb72b8e941e0d4aa9f6a9c6}
-      \strng{bibnamehash}{fcbea740aeb72b8e941e0d4aa9f6a9c6}
-      \strng{authorbibnamehash}{fcbea740aeb72b8e941e0d4aa9f6a9c6}
-      \strng{authornamehash}{fcbea740aeb72b8e941e0d4aa9f6a9c6}
-      \strng{authorfullhash}{fcbea740aeb72b8e941e0d4aa9f6a9c6}
-      \field{sortinit}{K}
-      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \strng{namehash}{d6ebb0634de22e70618460d3fc936297}
+      \strng{fullhash}{d6ebb0634de22e70618460d3fc936297}
+      \strng{bibnamehash}{d6ebb0634de22e70618460d3fc936297}
+      \strng{authorbibnamehash}{d6ebb0634de22e70618460d3fc936297}
+      \strng{authornamehash}{d6ebb0634de22e70618460d3fc936297}
+      \strng{authorfullhash}{d6ebb0634de22e70618460d3fc936297}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{The art of computer programming, volume 3: (2nd ed.) sorting and searching}
-      \field{year}{1998}
+      \field{journaltitle}{Search Enterprise AI}
+      \field{title}{natural language understanding (NLU)}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://searchenterpriseai.techtarget.com/definition/natural-language-understanding-NLU
+      \endverb
+      \verb{url}
+      \verb https://searchenterpriseai.techtarget.com/definition/natural-language-understanding-NLU
+      \endverb
     \endentry
-    \entry{Pollefliet2011}{book}{}
+    \entry{Kumar2017}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=7ca343ebcc6de1727ac22a1a847c21e5}{%
-           family={Pollefliet},
-           familyi={P\bibinitperiod},
-           given={Leen},
-           giveni={L\bibinitperiod},
+        {{uniquename=0,uniquepart=base,hash=cdddeb4794e39ea4f07ba54f47ec56eb}{%
+           family={Shridhar},
+           familyi={S\bibinitperiod},
+           given={Kumar},
+           giveni={K\bibinitperiod},
            givenun=0}}%
       }
-      \list{location}{1}{%
-        {Gent}%
-      }
-      \list{publisher}{1}{%
-        {Academia Press}%
-      }
-      \strng{namehash}{7ca343ebcc6de1727ac22a1a847c21e5}
-      \strng{fullhash}{7ca343ebcc6de1727ac22a1a847c21e5}
-      \strng{bibnamehash}{7ca343ebcc6de1727ac22a1a847c21e5}
-      \strng{authorbibnamehash}{7ca343ebcc6de1727ac22a1a847c21e5}
-      \strng{authornamehash}{7ca343ebcc6de1727ac22a1a847c21e5}
-      \strng{authorfullhash}{7ca343ebcc6de1727ac22a1a847c21e5}
-      \field{sortinit}{P}
-      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \strng{namehash}{cdddeb4794e39ea4f07ba54f47ec56eb}
+      \strng{fullhash}{cdddeb4794e39ea4f07ba54f47ec56eb}
+      \strng{bibnamehash}{cdddeb4794e39ea4f07ba54f47ec56eb}
+      \strng{authorbibnamehash}{cdddeb4794e39ea4f07ba54f47ec56eb}
+      \strng{authornamehash}{cdddeb4794e39ea4f07ba54f47ec56eb}
+      \strng{authorfullhash}{cdddeb4794e39ea4f07ba54f47ec56eb}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Schrijven van verslag tot eindwerk: do's en don'ts}
-      \field{year}{2011}
+      \field{journaltitle}{medium}
+      \field{title}{Rule bases bots vs AI bots}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://medium.com/botsupply/rule-based-bots-vs-ai-bots-b60cdb786ffa
+      \endverb
+      \verb{url}
+      \verb https://medium.com/botsupply/rule-based-bots-vs-ai-bots-b60cdb786ffa
+      \endverb
     \endentry
     \entry{1}{article}{}
       \name{author}{1}{}{%
@@ -207,6 +339,40 @@
       \verb https://medium.com/@brijrajsingh/chat-bots-designing-intents-and-entities-for-your-nlp-models-35c385b7730d
       \endverb
     \endentry
+    \entry{Kristian2011}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=6b453a66dd698a560deba8016c57d798}{%
+           family={Tuil},
+           familyi={T\bibinitperiod},
+           given={Kristian},
+           giveni={K\bibinitperiod},
+           givenun=0,
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+      }
+      \strng{namehash}{6b453a66dd698a560deba8016c57d798}
+      \strng{fullhash}{6b453a66dd698a560deba8016c57d798}
+      \strng{bibnamehash}{6b453a66dd698a560deba8016c57d798}
+      \strng{authorbibnamehash}{6b453a66dd698a560deba8016c57d798}
+      \strng{authornamehash}{6b453a66dd698a560deba8016c57d798}
+      \strng{authorfullhash}{6b453a66dd698a560deba8016c57d798}
+      \field{sortinit}{v}
+      \field{sortinithash}{75dd7385c90b2252c3ae853a80ca853b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{computerworld}
+      \field{title}{Wat is een API?}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb https://computerworld.nl/development/74796-wat-is-een-api
+      \endverb
+      \verb{url}
+      \verb https://computerworld.nl/development/74796-wat-is-een-api
+      \endverb
+    \endentry
     \entry{3}{article}{}
       \field{sortinit}{W}
       \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
@@ -223,7 +389,37 @@
       \verb https://docs.microsoft.com/en-us/azure/cognitive-services/luis/what-is-luis
       \endverb
     \endentry
+    \entry{Wit2019}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=a1897c058dd7568fc64692d7965bd186}{%
+           family={Wit.ai},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{a1897c058dd7568fc64692d7965bd186}
+      \strng{fullhash}{a1897c058dd7568fc64692d7965bd186}
+      \strng{bibnamehash}{a1897c058dd7568fc64692d7965bd186}
+      \strng{authorbibnamehash}{a1897c058dd7568fc64692d7965bd186}
+      \strng{authornamehash}{a1897c058dd7568fc64692d7965bd186}
+      \strng{authorfullhash}{a1897c058dd7568fc64692d7965bd186}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{wit.ai}
+      \field{title}{Natural Language for Developers}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://wit.ai
+      \endverb
+      \verb{url}
+      \verb https://wit.ai
+      \endverb
+    \endentry
   \enddatalist
+  \missing{Pollefliet2011}
 \endrefsection
 \endinput
 

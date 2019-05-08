@@ -1,0 +1,165 @@
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+\lstset{
+	language=JavaScript,
+	backgroundcolor=\color{lightgray},
+	extendedchars=true,
+	basicstyle=\footnotesize\ttfamily,
+	showstringspaces=false,
+	showspaces=false,
+	numbers=left,
+	numberstyle=\footnotesize,
+	numbersep=9pt,
+	tabsize=2,
+	breaklines=true,
+	showtabs=false,
+	captionpos=b
+}
+
+\chapter{\IfLanguageName{dutch}{Proof of concept}{Proof of concept}}
+\label{ch:poc}
+
+In dit onderdeel zal de proof of concept besproken worden. In deze proof of concept wordt er gebruik gemaakt van de Microsoft bot framework SDK en van LUIS.
+
+\section{Gekozen framework}
+\label{sec:framework}
+
+Uit het onderzoek is gebleken dat LUIS de juiste keuze is uit alle vergeleken frameworks voor het maken van bots. Het is belangrijk dat de API een goede toegankelijkheid heeft en dat er per weergegeven utterance informatie is over de verschillende intents en daarbij een percentage.
+
+Door de goede toegankelijkheid van de API is er een mogelijkheid om de interface van LUIS zelf achterwege te laten en LUIS bijna volledig in een eigen applicatie kan implementeren. Zoals het toevoegen van intents, entities, utterances. Het enige dat niet kan worden opgehaald zijn de 'review endpoint utterances'. Maar juist door de goede toegankelijkheid kan dit op een andere manier worden opgelost, besproken in de conclusie van vorige hoofdstuk.
+
+Doordat LUIS bij elke utterance veel info teruggeeft over de intents waarbij deze kunnen behoren met daarbij dan nog eens de percentages van zekerheid dat een utterance bij een intent hoort kan er worden gekeken hoezeer LUIS zeker is dat een utterance bij die bepaalde intent hoort.
+
+Dat zijn de belangrijkste zaken waarmee er rekening moet gehouden worden voor de onderzoeksvraag te kunnen uitwerken. In dit geval is er één van de frameworks daartoe in staat om deze zaken te garanderen. Wit.ai kwam in de buurt maar wit voorziet niet genoeg informatie bij elke utterance. Er wordt wel gebruik gemaakt van scores hier maar bij elke utterance is er maar 1 intent met score voorzien in vegelijking met LUIS waarbij je alle intents ziet met de score daarbij.
+
+Ook komt dit goed uit dat LUIS wordt gekozen als framework dat dit kan realiseren omdat de opdrachtgever Endare, zelf ook gebruik maakt van LUIS voor het ontwikkelen van chatbots en zijn daarmee het meest vertrouwd.
+
+\section{Opzetten LUIS}
+\label{sec:opzet}
+
+Voor de opzet van de LUIS intents en utterances is er mij een voorbeeld toegereikt van de opdrachtgever Endare, zodat ik mijn model niet van nul zou moeten beginnen. Vanaf dit voorbeeld kan er verder gewerkt worden door nieuwe intents toe te voegen zodat deze alsmaar beter wordt.
+
+LUIS zal hier worden getraind als een soort van hulp bij de aankoop van producten en onderhoud en weergave van het account en winkelmandje. Zo kan er bijvoorbeeld producten worden toegevoegd aan het mandje, producten kunnen verwijderen, producten zoeken, hulp inroepen, het mandje tonen en verwijderen, het profiel tonen en aanpassen, enz.
+
+De intents dat zijn toegevoegd zijn: AddMore, ClearBasket, Curse, DeleteItem, FindItem, Greeting, Help, Joke, RemoveMore, ShowBasket, ShowProfile, Stop en UpdateProfile. Bij elke intent zijn er ongeveer 5 tot 10 utterances toegevoegd wat al een goed begin is voor het correct trainen van de bot.
+
+De entities die zich in LUIS bevinden zijn name, number en product waarvan number een ingebouwde entity is en de andere twee zelf gemaakte entities zijn. De naam dient als aanspreking bij de 'Greeting' intent. De entity 'number' is voor een hoeveelheid mee te geven bij bijvoorbeeld de intent 'AddMore', zodat er meerdere producten kunnen toegevoegd worden. De entity 'product' is voor te weten over welk product er gesproken wordt.
+
+LUIS is volledig in het engels geschreven omdat engels de taal is dat het beste wordt begrepen door LUIS. Dit zal dan ook resulteren in betere resultaten als een gebruiker praat tegen de bot. Indien de bot nederlands moet verstaan kunnen er twee dingen gebeuren. Ofwel maak je een andere LUIS applicatie aan volledig in het nederlands ofwel steek je er een middleware tussen die de nederlandse tekst omzet naar het engels zodat de engelstalige versie van LUIS alles verstaat. De beste en gemakkelijkste optie is het tweede omdat er ten eerste minder werk zal zijn. Er zal maar 1 LUIS app moeten gemaakt worden, dus enkel in het engels. Ook zal luis beter werken omdat hij engels beter verstaat dan het nederlands.
+
+\section{Software}
+\label{sec:POC}
+
+\subsection{Node.js en TypeScript}
+\label{ts}
+
+De keuze om de applicatie te ontwikkelen met Node.js in TypeScript was niet zo moeilijk. Omdat er bij Endare, het bedrijf die met de onderzoeksvraag is gekomen wordt gewerkt met Node.js is de keuze snel gemaakt om het met Node.js te maken. Door dit te doen met de gebruikelijke tools van dat bedrijf zorgt er voor eventueel latere implementatie een gebruiksgemak doordat de taal hetzelfde is en niet zal moeten worden omgezet. Daardoor ook de keuze om het in TypeScript te maken in de plaats van JavaScript omdat Endare is overgestapt naar TypeScript.
+
+\subsection{Bot Framework Emulator}
+\label{emulator}
+
+Dit is een applicatie gemaakt voor ontwikkelaars voor het te kunnen testen van een chatbot. Met de emulator kan er met de bot gepraat worden via de user interface. Er is ook een inspector en een log waar de verzonden en ontvangen berichten verder in detail kunnen bekeken worden.
+
+Het is zeer eenvooudig om met de bot te verbinden. Als deze lokaal aan het runnen is op je eigen applicatie kan er geconnecteerd worden door enkel het localhost adres in te geven. Daarna is de emulator klaar om met de bot te praten.
+
+\subsection{Microsoft Bot Framework}
+\label{botFramework}
+
+Voor het uitwerken van de proof of concept is ervoor gekozen om het Bot Framework SDK te gebruiken van Microsoft. Dit framework is veelgebruikt bij het ontwikkelen van chatbots omdat deze zeer veel mogelijkheden heeft voor het maken van bots. Deze kan gebruikt worden voor zowel simpele console applicaties tot zeer uitgebreide interfaces. Het Bot Framework SDK gebruikt restify, dat is een bekend framework voor het maken van webservices voor het maken van de web server van de bot.
+
+Dit SDK heeft een systeem voor het maken van dialogs, er zijn veel ingebouwde zaken zoals kaarten met daarin knoppen, foto's, enz. Wat heel belangrijk is hier is dat er een mogelijkheid is voor het implementeren van AI frameworks. Wat hier zeker een noodzaak is en gebruik van zal gemaakt worden door LUIS te implementeren in het bot framework SDK.
+
+Het installeren van de bot framework SDK (botbuilder) kan eenvoudig worden gedaan door simpelweg een commando in te geven. Daarna kan je onmiddelijk aan de slag met de botbuilder.
+
+Eerst en vooral dient er een HTTP server gecreëerd te worden. Hierop wordt de bot lokaal gehost zodat deze kan getest worden. De bot kan getest worden gebruik makende van de Bot Framework Emulator als deze HTTP server draait.
+
+\medskip
+\begin{lstlisting}[caption=creatie van de HTTP server]
+// create HTTP server \\
+var server = restify.createServer();
+server.listen(process.env.port || process.env.PORT || 3978, () => {
+	console.log(`Listening... ${server.name}... ${server.url}`);
+});
+\end{lstlisting}
+
+Met de HTTP server alleen is er nog geen connectie met de botbuilder. Een connectie maken kan ook eenvoudig in enkele lijnen code. Daarna kun je LUIS koppelen aan deze connectie. Dit doe je aan de hand van het endpoint dat je krijgt wanneer je LUIS deployed op de site van LUIS zelf. Dan krijg je een link naar het endpoint. Deze link steek je best in de environment variables zodat deze veilig blijft naar de buitenwereld toe. Daarna moet kunnen geluisterd worden naar inkomende boodschappen die je bijvoorbeeld ingeeft in de bot framework emulator. 
+
+\medskip
+\begin{lstlisting}[caption=connectie en linken van LUIS]
+// connection \\
+var conn = new builder.ChatConnector({
+	appId: process.env.MICROSOFT_APP_ID,
+	appPassword: process.env.MICROSOFT_APP_PASSWORD
+});
+
+// link LUIS to botbuilder \\
+var bot = new builder.UniversalBot(conn);
+bot.recognizer(new builder.LuisRecognizer(process.env.LUIS_MODEL_URL));
+
+// listen for incoming requests \\
+server.post("/api/messages", conn.listen());
+\end{lstlisting}
+
+Als al deze stappen gedaan zijn, is alles in gereedheid gebracht voor het kunnen verwerken van een bepaalde input. Dit wordt gedaan door dialogs. Aan de hand van de intent die je terug krijgt van luis voor een bepaalde input van een gebruiker, wordt telkens een andere dialog aangeroepen zodat de juiste actie kan worden ondernomen en het juiste resultaat kan teruggegeven worden.
+
+Een dialog werk volgens de waterval methode. Dit betekend dat een dialog van functie naar functie kan gaan. Dit is zodat als eerst dit stukje code en dan dat stukje code als dat eerst gedaan is en zo voort. Zoals er kan gezien worden in Listing 4.3 wordt er eerst gevraagt naar de naam van de gebruiker. Als de gebruiker deze naam heeft ingegeven gaat er via de waterval methode naar de volgende functie gegaan worden waarbij de naam van de gebruiker wordt opgeslagen zodat de bot de naam blijft onthouden voor in de toekomst en wordt er een antwoord teruggestuurd naar de gebruiker.
+
+Dit is een eenvoudig voorbeeld, er kan hierin veel verder gegaan worden, er kan bijvoorbeeld in een dialog een andere dialog aangeroepen worden. Als de naam bijvoorbeeld nog niet geweten is kan er een dialog worden aangeroepen voor de naam op te vragen maar indien deze wel al geweten is kan er gewoon verder worden gegaan met de volgende stap in de waterval.
+
+\medskip
+\begin{lstlisting}[caption=Waterval methode]
+// dialog \\
+bot.dialog("/", [
+	function (sess, args, next) {
+		if (!sess.userData.name) {
+			builder.Prompts.text(sess, "Hello, user! What is your name?");
+		}
+		else {
+			next();
+		}
+	},
+	function (sess, result) {
+		sess.userData.name = result.response;
+		sess.send("Hello, " + sess.userData.name);
+	}
+]);
+\end{lstlisting}
+
+Dit is zowat de basis van de werking van de botbuilder. Er zijn hier dus nog veel meer mogelijkheden maar die liggen uit de scope van deze bachelorproef. Met deze basis kan er begonnen worden aan de uitwerking van de proof of concept.
+
+\section{Uitwerking}
+\label{sec:Uitwerking}
+
+Eerst en vooral was het werkende krijgen van de botbuilder en daarna het linken van LUIS hieraan een eerste stap. Hoe LUIS wordt gelinkt met de botbuilder is uitgelegd in het vorige hoofdstuk. Hoe de verschillende intents van LUIS gelinkt zijn met de dialog zit nog een beetje anders in mekaar dan een simpele dialog voor het vragen en opslaan van een naam.
+
+\medskip
+\begin{lstlisting}[caption=Waterval methode]
+// dialog AddMore intent \\
+bot.dialog("/addMore", (sess, args) => {
+	sess.send(`You reached AddMore intent`);
+}).triggerAction({
+	matches: "AddMore"
+});
+\end{lstlisting}
+
+%intent en entities uit de sess halen
+
+%API
+%%chapter testen en grafieken en percentages van aantal automatisch
