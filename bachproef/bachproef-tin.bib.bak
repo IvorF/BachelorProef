@@ -1,0 +1,68 @@
+% Encoding: UTF-8
+
+@Article{3,
+  title   = {What is Language Understanding (LUIS)?},
+  journal = {microsoft},
+  year    = {2019},
+  url     = {https://docs.microsoft.com/en-us/azure/cognitive-services/luis/what-is-luis},
+}
+
+@Article{2,
+  author  = {Linsey Jepma},
+  title   = {In 7 stappen aan de slag met chatbots},
+  journal = {frankwatching},
+  year    = {2018},
+  url     = {https://www.frankwatching.com/archive/2018/01/03/in-7-stappen-aan-de-slag-met-chatbots/},
+}
+
+@Article{1,
+  author       = {Brij Raj Singh},
+  title        = {Chat Bots Designing Intents and Entities for your NLP Models},
+  journal      = {Medium},
+  journaltitle = {Designing Intents and Entities for your NLP Models},
+  year         = {2017},
+  date         = {2017-01-29},
+  url          = {https://medium.com/@brijrajsingh/chat-bots-designing-intents-and-entities-for-your-nlp-models-35c385b7730d},
+}
+
+@Article{4,
+  author  = {Giulia},
+  title   = {Wit.ai and how to use it},
+  journal = {medium},
+  year    = {2017},
+  url     = {https://medium.com/@Giuul/wit-ai-and-how-to-use-it-72372b07d98b},
+}
+
+@Article{5,
+	author  = {Assaf Elovic},
+	title   = {Chatbots — The Beginners Guide},
+	journal = {chatbots magazine},
+	year    = {2017},
+	url     = {https://chatbotsmagazine.com/chatbots-the-beginners-guide-618e72599b55},
+}
+
+@Article{6,
+	author  = {Dave Doijer},
+	title   = {Chatbots zijn de trend: wat weet jij al over deze bots?},
+	journal = {kgom},
+	year    = {2018},
+	url     = {https://kgom.nl/24/chatbots-zijn-de-trend-wat-weet-jij-al-over-deze-bots/},
+}
+
+@Article{,
+	author  = {},
+	title   = {},
+	journal = {},
+	year    = {201},
+	url     = {},
+}
+
+@Article{,
+	author  = {},
+	title   = {},
+	journal = {},
+	year    = {201},
+	url     = {},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}
