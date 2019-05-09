@@ -81,31 +81,39 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.4}Uitwerking}{39}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Conclusie}{43}{chapter.5}
+\contentsline {chapter}{\numberline {5}Resultaten}{43}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{45}{appendix.A}
+\contentsline {section}{\numberline {5.1}Testdata}{43}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Introductie}{45}{section.A.1}
+\contentsline {section}{\numberline {5.2}Uitwerking}{44}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}State-of-the-art}{45}{section.A.2}
+\contentsline {chapter}{\numberline {6}Conclusie}{47}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.1}Chatbots}{45}{subsection.A.2.1}
+\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{49}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.2}NLP (Natural language processing)}{46}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.1}Introductie}{49}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.3}Intents}{46}{subsection.A.2.3}
+\contentsline {section}{\numberline {A.2}State-of-the-art}{49}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.4}Entiteiten}{46}{subsection.A.2.4}
+\contentsline {subsection}{\numberline {A.2.1}Chatbots}{49}{subsection.A.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.5}Trainen}{46}{subsection.A.2.5}
+\contentsline {subsection}{\numberline {A.2.2}NLP (Natural language processing)}{50}{subsection.A.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.6}Feedback loops}{46}{subsection.A.2.6}
+\contentsline {subsection}{\numberline {A.2.3}Intents}{50}{subsection.A.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Methodologie}{47}{section.A.3}
+\contentsline {subsection}{\numberline {A.2.4}Entiteiten}{50}{subsection.A.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Verwachte resultaten}{47}{section.A.4}
+\contentsline {subsection}{\numberline {A.2.5}Trainen}{50}{subsection.A.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.5}Verwachte conclusies}{47}{section.A.5}
+\contentsline {subsection}{\numberline {A.2.6}Feedback loops}{50}{subsection.A.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografie}{49}{appendix*.6}
+\contentsline {section}{\numberline {A.3}Methodologie}{51}{section.A.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.4}Verwachte resultaten}{51}{section.A.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.5}Verwachte conclusies}{51}{section.A.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Testdata}{53}{appendix.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliografie}{57}{appendix*.6}
 \contentsfinish 
