@@ -14,5 +14,15 @@
 % Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
 %onderzoek?
 
-\lipsum[76-80]
+Wat we uit dit onderzoek kunnen besluiten is dat er wel degelijk een manier is om te realiseren wat er wordt gevraagt in de onderzoeksvraag. Wel is dit op een andere manier dan dat verwacht was. Er was verwacht dat minstens één van de onderzochte frameworks een API zou hebben die toegankelijk genoeg zou zijn voor dit te realiseren. Wat bleek was dat dit niet het geval was, geen enkele van de frameworks had deze gewenste API-call of was er niet genoeg informatie in de respons van deze call voor dit allemaal te realiseren op deze manier.
+
+Wat wel bleek uit dit onderzoek is dat er een andere manier was om dit te realiseren. Eén framework genaamd LUIS had andere API-calls met de benodigde informatie om de input van de gebruikers rechtsstreeks op te vangen en met de info die LUIS meegaf, zo de utterance te koppelen met de juiste intent. Enkel LUIS was in staat om dit op deze manier te doen omdat deze per utterances meer info gaf dan andere frameworks. Juist dit was noodzakelijk om te kunnen onderzoeken of LUIS zeker genoeg was dat een utterance bij een bepaalde intent past. Bij de andere frameworks kan deze controle niet worden gedaan omdat er niet genoeg info wordt weergegeven.
+
+Uit de testen die zijn gedaan met de proof of concept is gebleken dat 50 percent van de inputs van de gebruiker niet meer in de 'Review endpoint utterances' kwam maar rechtstreeks werd gekoppeld aan de juiste intent. Hier is ook gecontroleerd geweest wat de invloed is op de accuraatheid van LUIS. De resultaten hiervan zijn positief uitgevallen. De accuraatheid is niet gedaald, deze is zelf lichtjes gestegen. Er was verwacht dat deze wat meer zou stijgen maar door de beperkte hoeveelheid utterances per intent is dit niet zo gestegen. Dit zal meer en meer beginnen stijgen vanaf er meer en meer verschillende utterances zullen komen per intent.
+
+Wat er verwacht was van het onderzoek was een automatisatie van 10 tot 30 percent. Wat uit het onderzoek is gebleken, is dat automatisatie effectief mogelijk is met zelf een beter resutaat dat werd verwacht. Uit de opzet en de tests was maar liefst 50 percent automatisch toegewezen aan de intent. Er kunnen altijd nog aanpassingen gedaan worden aan de parameters voor de controle van de utterance voor dit eventueel nog beter te maken maar er moet altijd wat speling zijn voor eventuele fouten op te vangen zodat deze kunnen vermeden worden.
+
+Wat er in een vervolgonderzoek nog kan gebeuren is het onderzoeken van intents met meer ingewikkeldere utterances, bijvoorbeeld utterances met meer dan 1 entity. Hier zou ook beter kunnen gecontroleerd worden of deze entities correct uit de utterance worden gehaald. Een intent met nog maar weinig utterances zal meer last kunnen hebben met deze er correct uit te halen dan intents met al een grote verscheidenheid aan utterances. Ook zouden er meerdere LUIS applicaties kunnen gestest worden, met elk een vershillend doen en verschillende testdata, eventueel een veel grotere testdataset. Ook bij deze controleren in welke mate de input van de gebruiker al automatisch gelinkt wordt met de correcte intent.
+
+
 

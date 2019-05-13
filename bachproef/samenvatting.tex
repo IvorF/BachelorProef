@@ -37,4 +37,16 @@
 
 \chapter*{\IfLanguageName{dutch}{Samenvatting}{Abstract}}
 
-\lipsum[1-4]
+Dit werk is belangrijk voor het makkelijker maken van de ontwikkeling van een chatbot. Grotendeels zal dit onderzocht worden voor het besparen van tijd en het beter maken van de accuraatheid van deze bot.
+
+Omdat het ontwikkelen van een chatbot zeer veel tijd in beslag neemt, vooral het op punt stellen van de accuraatheid van de bot. Er zal dus een efficiëntere manier gezocht worden om deze bot dingen aan te leren.
+
+Er is een proof of concept werkende met LUIS opgesteld die de inputs van de gebruiker opvangt, deze controleerd aan de hand van de info die LUIS voorziet per input. Als de input na deze controle is goedgekeurd zal deze input automatisch worden gelinkt aan de juiste intent en zal de manuele controle achterwege kunnen worden gelaten.
+
+In dit document bevindt zich een onderzoek van een aantal van de bekendste NLP-frameworks. Er wordt onderzocht hoe deze precies werken en of de API toegankelijk genoeg is voor het realiseren van deze proof of concept.
+
+Het resultaat van dit onderzoek is positief uitgevallen. Het is effectief gelukt met LUIS om een proof of concept op te stellen die via de API LUIS gedeeltelijk automatisch zal aanleren.
+
+Uit de testen hiervan is gebleken dat maar liefst 50 percent van de inputs niet meer in de 'Review endpoint utterances' tabblad komen maar automarisch worden gelinkt aan de correcte intent.
+
+In een vervolgonderzoek kan dit onderzoek nog wat uitgebreid worden. Er kunnen met meerdere LUIS-apps gewerkt worden, met elk een totaal onder doel en onderwerp. Deze kunnen getest worden met meerdere en verschillende testdata. Ook kan er een veel ingewikkeldere applicatie getest worden met moeilijkere intent die utterances hebben met veel meer entities en controleren of deze hier ook correct worden gelinkt.

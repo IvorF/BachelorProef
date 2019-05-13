@@ -16,14 +16,14 @@ In dit onderdeel zal de onderzoeksvraag 'Kunnen we een chatbot automatisch laten
 \section{Mogelijkheden}
 \label{sec:Mogelijkheden}
 
-Eerst en vooral was er voorbereiding nodig want er was nog niet echt ervaring op vlak van chatbots. Wat zijn de mogelijkheden van zo een chatbot framework? Hoe worden intents aangemaakt en hoe werken die? Hoe worden entities aangemaakt en hoe voeg je die toe aan een bepaalde intent? Hoe wordt de bot getraind? Hoe wordt er dan effectief omgegaan met de input van de gebruiker waarbij de bot niet goed weet bij welke intent die hoort en hoe koppel je deze dan aan de juiste intent? Wat kun je nog allemaal met zo een framework doen? Hoe gebruik ik de API? Op al deze vragen zocht ik een antwoord.
+Eerst en vooral was er voorbereiding nodig want er was nog niet echt ervaring op vlak van chatbots. Wat zijn de mogelijkheden van zo een chatbot framework? Hoe worden intents aangemaakt en hoe werken die? Hoe worden entities aangemaakt en hoe worden deze toegevoegd aan een bepaalde intent? Hoe wordt de bot getraind? Hoe wordt er dan effectief omgegaan met de input van de gebruiker waarbij de bot niet goed weet bij welke intent die hoort en hoe wordt deze dan gekoppeld aan de juiste intent? Wat kan er nog allemaal met zo een framework gedaan worden? Hoe wordt de de API gebruikt? Op al deze vragen wordt een antwoord gezocht.
 
 \subsection{Ontdekken}
 \label{Ontdekken}
 
 De keuze van het eerste framework voor de eerste ervaringen op te doen was niet zo moeilijk. Hierbij kwam LUIS.ai al snel naar boven doordat er op het stagebedrijf al gewerkt wordt hiermee en er een voorbeeld ter beschikking was gesteld waarop er kon worden verder gebouwd.
 
-Het trainen van een chatbot via LUIS is zeer gebruiksvriendelijk. Eerst en vooral dient er een nieuwe app te worden aangemaakt. Dit is zeer eenvoudig door de vereiste naam, de taal die er zal gesproken worden tegen de bot en eventueel een beschrijving toe te voegen. Eénmaal de app is gecreërd dienen er Intents aangemaakt te worden. Een voorbeeld van een intent kan zijn "Greeting", hierin vallen dus alle begroetingen. Per intent dien je dan utterances toe te voegen. Utterances zijn voorbeeldzinnen die worden gelinkt met deze gemaakte intent. Door deze voorbeeldzinnen weet LUIS wat een "Greeting" is. Een voorbeeld die zou passen bij een begroeting is "Hi, I'm Ivor". Hoe meer zinnen je toevoegt, liefst allemaal met een verschillende zinsbouw, hoe beter LUIS de input van de gebruikers zal herkennen en aan deze intent zal linken.
+Het trainen van een chatbot via LUIS is zeer gebruiksvriendelijk. Eerst en vooral dient er een nieuwe app te worden aangemaakt. Dit is zeer eenvoudig door de vereiste naam, de taal die er zal gesproken worden tegen de bot en eventueel een beschrijving toe te voegen. Eénmaal de app is gecreëerd dienen er Intents aangemaakt te worden. Een voorbeeld van een intent kan zijn 'Greeting', hierin vallen dus alle begroetingen. Per intent dienen er dan utterances toegevoegd te worden. Utterances zijn voorbeeldzinnen die worden gelinkt met deze gemaakte intent. Door deze voorbeeldzinnen weet LUIS wat een 'Greeting' is. Een voorbeeld die zou passen bij een begroeting is 'Hi, I'm Ivor'. Hoe meer zinnen er toegevoegd worden, liefst allemaal met een verschillende zinsbouw, hoe beter LUIS de input van de gebruikers zal herkennen en aan deze intent zal linken.
 
 
 \begin{figure}[h!]
@@ -33,9 +33,9 @@ Het trainen van een chatbot via LUIS is zeer gebruiksvriendelijk. Eerst en voora
 	\label{fig:intents}
 \end{figure}
 
-In de meeste gevallen is een utterance toevoegen niet zomaar eenvoudigweg een zin toevoegen. Meestal zal er in een utterance één of meerdere entities terug te vinden zijn. Bijvoorbeeld in voorgaan voorbeeld bij de intent "Greeting" konden we een utterance toevoegen "Hello, I'm Ivor". In deze utterance is Ivor een entity, namelijk een naam. Het voordeel van deze entities uit de zinnen te halen is dat bijvoorbeeld de chatbot dan al direct weet dat "Ivor" de naam is van de persoon die communiceert met de bot en kan de bot deze persoon aanspreken met zijn naam. Dit maakt het gesprek al persoonlijker.
+In de meeste gevallen is een utterance toevoegen niet zomaar eenvoudigweg een zin toevoegen. Meestal zal er in een utterance één of meerdere entities terug te vinden zijn. Bijvoorbeeld in voorgaan voorbeeld bij de intent 'Greeting' konden we een utterance toevoegen 'Hello, I'm Ivor'. In deze utterance is Ivor een entity, namelijk een naam. Het voordeel van deze entities uit de zinnen te halen, is dat bijvoorbeeld de chatbot dan al direct weet dat 'Ivor' de naam is van de persoon die communiceert met de bot en kan de bot deze persoon aanspreken met zijn naam. Dit maakt het gesprek al persoonlijker.
 
-LUIS heeft zelf al een redelijk aantal ingebouwde entities, zoals nummers, leeftijden, e-mail adressen, ... en kan deze makkelijk zelf al herkennen. Indien er geen ingebouwde entity bestaat kan je zelf een entity maken en deze makkelijk linken aan het juiste woord in een utterance.
+LUIS heeft zelf al een redelijk aantal ingebouwde entities, zoals nummers, leeftijden, e-mail adressen, ... en kan deze makkelijk zelf al herkennen. Indien er geen ingebouwde entity bestaat kan er zelf een entity aangemaakt worden en deze makkelijk linken aan het juiste woord in een utterance.
 
 \begin{figure}[h!]
 	\centering
@@ -44,11 +44,11 @@ LUIS heeft zelf al een redelijk aantal ingebouwde entities, zoals nummers, leeft
 	\label{fig:entity}
 \end{figure}
 
-Eénmaal je enkele intents aangemaakt hebt en bij elke intent enkele utterances hebt toegevoegd (het is aangeraden van er minimum 5 toe te voegen voor een betere accuraatheid) met daarbij eventueel de gepaste entities kan de chatbot als eens getest worden.
+Eénmaal er enkele intents aangemaakt zijn en bij elke intent enkele utterances zijn toegevoegd (het is aangeraden van er minimum 5 toe te voegen voor een betere accuraatheid) met daarbij eventueel de gepaste entities kan de chatbot als eens getest worden.
 
-Het enige dat nog moet gebeuren vooraleer er kan getest worden is LUIS trainen. Na het toevoegen van nieuwe intents, entities en utterances dient LUIS opnieuw getraind te worden met de nieuwe data. Na enkele seconden trainen staat alles klaar om getest te worden.
+Het enige dat nog moet gebeuren vooraleer er kan getest worden, is LUIS trainen. Na het toevoegen van nieuwe intents, entities en utterances dient LUIS opnieuw getraind te worden met de nieuwe data. Na enkele seconden trainen staat alles klaar om getest te worden.
 
-Op de site van LUIS zelf kan er gepraat worden met de chatbot via een simpele interface. Hierin kan er simpelweg gepraat worden met de bot door utterances in te geven. Als voorbeeld kan er weer gebruik worden gemaakt van de utterance: "Hi, I'm Ivor". Zo kun je zien of deze de juiste intent herkent en de entity er juist uithaalt met daarbij het percentage van de zekerheid dat LUIS juist is. Bij dit voorbeeld is LUIS er 81 percent zeker van dat deze utterance hoort bij de intent "Greeting" met de entity "Ivor" als "name".
+Op de site van LUIS zelf kan er gepraat worden met de chatbot via een simpele interface. Hierin kan er simpelweg gepraat worden met de bot door utterances in te geven. Als voorbeeld kan er weer gebruik worden gemaakt van de utterance: 'Hi, I'm Ivor'. Zo kan er gezien worden of deze de juiste intent herkent en de entity er juist uithaalt met daarbij het percentage van de zekerheid dat LUIS juist is. Bij dit voorbeeld is LUIS er 81 percent zeker van dat deze utterance hoort bij de intent 'Greeting' met de entity 'Ivor' als 'name'.
 
 Indien de utterance niet hoort bij de door LUIS geselecteerde intent kan deze handmatig aangepast worden naar de correcte en kan LUIS opnieuw getraind worden zodat dit de volgende keer correct is.
 
@@ -59,9 +59,9 @@ Indien de utterance niet hoort bij de door LUIS geselecteerde intent kan deze ha
 	\label{fig:test}
 \end{figure}
 
-Als alles goed verloopt en bij het testen zijn er niet veel fouten, kan de applicatie gepubliceerd worden. Dit zorgt ervoor dat je vanuit je eigen applicatie de chatbot kan integreren.
+Als alles goed verloopt en bij het testen zijn er niet veel fouten, kan de applicatie gepubliceerd worden. Dit zorgt ervoor dat er vanuit een eigen applicatie een chatbot kan geïntegreerd worden.
 
-Eénmaal deze geïntegreerd is in een eigen applicatie kan er lokaal getest worden op wat de chatbot reageert op bepaalde utterances. Dit kan makkelijk getest worden via de "Bot Framework Emulator". Dit is een zeer handig applicatie voor het testen van de bot. Er is een interface zodat het direct lijkt op een echt chatvenster. Hiernaast is er ook een inspector. Hierin komen alle GET en POST boodschappen die worden gestuurd en ontvangen. Zo kan je makkelijk zien als er iets is misgelopen.
+Eénmaal deze geïntegreerd is in een eigen applicatie kan er lokaal getest worden op wat de chatbot reageert op bepaalde utterances. Dit kan makkelijk getest worden via de 'Bot Framework Emulator'. Dit is een zeer handig applicatie voor het testen van de bot. Er is een interface zodat het direct lijkt op een echt chatvenster. Hiernaast is er ook een inspector. Hierin komen alle GET en POST boodschappen die worden gestuurd en ontvangen. Zo kan er makkelijk gezien worden als er iets is misgelopen.
 
 \begin{figure}[h!]
 	\centering
@@ -70,9 +70,9 @@ Eénmaal deze geïntegreerd is in een eigen applicatie kan er lokaal getest word
 	\label{fig:emulator}
 \end{figure}
 
-Als je LUIS applicatie gepubliceerd is en deze ontvangt input van gebruikers door bijvoorbeeld via de Bot Framework Emulator, analyseert LUIS elk van deze utterances. LUIS probeert die dan te linken aan de juiste intent. LUIS zal nooit 100 percent zeker zijn dat een bepaalde utterance behoord tot één specifieke intent. LUIS zal de utterances die de gebruiker invoert waar hij niet zo zeker van is verzamelen onder "Review endpoint utterances". Onder deze pagina bevinden zich alle utterances waar LUIS minder zeker van is zodat je deze manueel kan linken aan de juiste intent, utterance per utterance. Bij elke utterance geeft LUIS zelf al een schatting bij welke intent elke deze hoort. Afbeelding \ref{fig:review} toont de schattingen van LUIS aan de hand van het percentage dat hij zeker is dat de utterance bij een bepaalde intent hoort. Als deze juist is kan deze toegevoegd worden. 
+Als de LUIS applicatie gepubliceerd is en deze ontvangt input van gebruikers door bijvoorbeeld via de Bot Framework Emulator, analyseert LUIS elk van deze utterances. LUIS probeert die dan te linken aan de juiste intent. LUIS zal nooit 100 percent zeker zijn dat een bepaalde utterance behoort tot één specifieke intent. LUIS zal de utterances die de gebruiker invoert waar hij niet zo zeker van is, verzamelen onder 'Review endpoint utterances'. Onder deze pagina bevinden zich alle utterances waar LUIS minder zeker van is zodat deze manueel kunnen gelinkt worden aan de juiste intent, utterance per utterance. Bij elke utterance geeft LUIS zelf al een schatting bij welke intent deze hoort. Afbeelding \ref{fig:review} toont de schattingen van LUIS aan de hand van het percentage dat hij zeker is dat de utterance bij een bepaalde intent hoort. Als deze juist is, kan deze toegevoegd worden. 
 
-Indien dit niet juist is, kan er via een dropdown menu de juiste intent geselecteerd worden en deze dan handmatig toevoegen. Bij deze dropdown staan alle intents in volgorde van zekerheid met het percentage erbij. Bij dit voorbeeld "Let's add 3 more" is de gesuggereerde intent van LUIS AddMore met een percentage van 89.2 percent. De tweede suggestie is FintItem met een percentage van 1.8 percent. Door het grote verschil aan percentages wordt er niet getwijfeld dat deze utterance hoort bij de intent "AddMore". De entities van elk van deze utterances worden door LUIS automatisch gedetecteerd. Moest het zijn dat LUIS dat niet gedaan heeft kan je de entities handmatig aanduiden.
+Indien dit niet juist is, kan er via een dropdown menu de juiste intent geselecteerd worden en deze dan handmatig toevoegen. Bij deze dropdown staan alle intents in volgorde van zekerheid met het percentage erbij. Bij dit voorbeeld 'Let's add 3 more' is de gesuggereerde intent van LUIS AddMore met een percentage van 89.2 percent. De tweede suggestie is FintItem met een percentage van 1.8 percent. Door het grote verschil aan percentages wordt er niet getwijfeld dat deze utterance hoort bij de intent 'AddMore'. De entities van elk van deze utterances worden door LUIS automatisch gedetecteerd. Moest het zijn dat LUIS dat niet gedaan heeft, kunnen de entities handmatig aangeduid worden.
 
 \begin{figure}[h!]
 	\centering
@@ -81,7 +81,7 @@ Indien dit niet juist is, kan er via een dropdown menu de juiste intent geselect
 	\label{fig:review}
 \end{figure}
 
-Dit was een zeer goed begin om te begrijpen wat de concepten zijn van een framework voor het ontwikkelen van chatbots. Door het op voorhand bestuderen van één bepaald framework voor het maken van chatbots worden al veel aspecten zeer duidelijk en deze zijn meestal wel hetzelfde voor de andere frameworks ook. Door LUIS al eens te bestuderen is het doel van deze bachelorproef direct veel duidelijk geworden. De review endpoint utterances uit afbeelding \ref{fig:review} dient nu allemaal handmatig te worden goedgekeurd en nagekeken. Zoals er kan gezien worden is het niet nodig om bij elke utterance handmatige controle te steken. Soms is de score van de eerste en de tweede gesuggereerde intent zo groot dat er geen twijfel mogelijk is bij welke intent deze behoord. Bij alle utterances waarbij dit het geval is zou deze handmatige controle achterwege kunnen worden gelaten.
+Dit was een zeer goed begin om te begrijpen wat de concepten zijn van een framework voor het ontwikkelen van chatbots. Door het op voorhand bestuderen van één bepaald framework voor het maken van chatbots worden al veel aspecten zeer duidelijk en deze zijn meestal wel hetzelfde voor de andere frameworks ook. Door LUIS al eens te bestuderen is het doel van deze bachelorproef direct veel duidelijker geworden. De review endpoint utterances uit afbeelding \ref{fig:review} dient nu allemaal handmatig te worden goedgekeurd en nagekeken. Zoals er kan gezien worden, is het niet nodig om bij elke utterance handmatige controle te steken. Soms is de score van de eerste en de tweede gesuggereerde intent zo groot dat er geen twijfel mogelijk is bij welke intent deze behoort. Bij alle utterances waarbij dit het geval is, zou deze handmatige controle achterwege kunnen worden gelaten.
 
 In het volgende deel worden verschillende van de bekendste frameworks voor het maken van bot vergeleken. Hierbij zal gekeken worden of deze een API hebben en of deze toegankelijk genoeg is voor de 'review endpoint utterances' op te halen en deze via een API-call op te halen in een eigen applicatie, deze automatisch te controleren en goedkeuren indien dit kan. Zo zullen uiteindelijk de utterances die nog handmatig zullen moeten gecontroleerd worden veel minder zijn.
 
@@ -98,7 +98,7 @@ Nu dat de basisconcepten van LUIS duidelijk zijn door het vorige hoofdstuk, kan 
 
 Wit.ai hoort ook bij één van de bekendste frameworks voor het ontwikkelen van chatbots. De grote lijnen van dit framework zijn wat hetzelfde als die van LUIS.
 
-Eerst en vooral moet er een applicatie worden aangemaakt met de naam, de taal waarin de bot zal functioneren en eventueel een omschrijving. Het toevoegen van intents en utterances werkt op een verschillende manier maar komt uiteindelijk op hetzelfde neer. Afbeelding \ref{fig:intentsWit} toont hoe dit in zijn werk gaat. Hier moet je beginnen met het invoeren van een utterance en dan kan deze gelinkt worden met een intent. Hier kunnen we weer het voorbeeld gebruiken van 'Hi, I'm Ivor'.
+Eerst en vooral moet er een applicatie worden aangemaakt met de naam, de taal waarin de bot zal functioneren en eventueel een omschrijving. Het toevoegen van intents en utterances werkt op een verschillende manier maar komt uiteindelijk op hetzelfde neer. Afbeelding \ref{fig:intentsWit} toont hoe dit in zijn werk gaat. Hier moet er begonnen worden met het invoeren van een utterance en dan kunnen deze gelinkt worden met een intent. Hier kunnen we weer het voorbeeld gebruiken van 'Hi, I'm Ivor'.
 
 \begin{figure}[h!]
 	\centering
@@ -107,9 +107,9 @@ Eerst en vooral moet er een applicatie worden aangemaakt met de naam, de taal wa
 	\label{fig:intentsWit}
 \end{figure}
 
-Wit herkent dit al automatisch als een 'Greeting', hier zie je ook het percentage van 99 percent. Dit percentage is zoals bij LUIS de zekerheid dat Wit denkt dat een intent bij een bepaalde utterance hoort. Indien Wit deze niet herkent of de intent bestaat simpelweg nog niet, kan deze hier aangemaakt en toegevoegd worden. Dit werkt juist op dezelfde manier bij het toevoegen van een entity.
+Wit herkent dit al automatisch als een 'Greeting', hier wordt ook het percentage van 99 percent gezien. Dit percentage is zoals bij LUIS de zekerheid dat Wit denkt dat een intent bij een bepaalde utterance hoort. Indien Wit deze niet herkent of de intent bestaat simpelweg nog niet, kan deze hier aangemaakt en toegevoegd worden. Dit werkt juist op dezelfde manier bij het toevoegen van een entity.
 
-Het weergeven van de al ingevoerde utterances verschilt ook van LUIS. In Wit is er een tabblad 'Samples' waarbij alle utterances worden getoond onder elkaar. Hier kan je de utterances filteren per intent.
+Het weergeven van de al ingevoerde utterances verschilt ook van LUIS. In Wit is er een tabblad 'Samples' waarbij alle utterances worden getoond onder elkaar. Hier kunnen de utterances gefilterd worden per intent.
 
 \begin{figure}[h!]
 	\centering
@@ -118,7 +118,7 @@ Het weergeven van de al ingevoerde utterances verschilt ook van LUIS. In Wit is 
 	\label{fig:samples}
 \end{figure}
 
-Ook heeft Wit net zoals LUIS een pagina waar de utterances inkomen van de gebruikers die praten met de bot waarvan Wit niet exact weet bij welke intent deze horen. Hierin suggereert wit ook aan de hand van een percentage bij welke intent hij denkt dat een bepaalde utterance hoort. Deze kun je dan ook nakijken of dit klopt, indien dit niet juist is kan je deze veranderen via de dropdown en deze dan valideren. De gevalideerde utterance wordt daarna toegevoegd aan de lijst van de samples met zijn intent.
+Ook heeft Wit net zoals LUIS een pagina waar de utterances inkomen van de gebruikers die praten met de bot waarvan Wit niet exact weet bij welke intent deze horen. Hierin suggereert Wit ook aan de hand van een percentage bij welke intent hij denkt dat een bepaalde utterance hoort. Deze kunnen dan ook nagekeken worden of alles klopt. Indien dit niet juist is, kan deze veranderd worden via de dropdown en deze dan gevalideerd worden. De gevalideerde utterance wordt daarna toegevoegd aan de lijst van de samples met zijn intent.
 
 Ook bij Wit zouden deze reviews moeten worden geautomatiseerd. Nu de basiswerking van Wit duidelijk is geworden, kan er worden gekeken naar de toegankelijkheid van de API. 
 
@@ -136,7 +136,7 @@ Wit heeft ook wel degelijk een API ter beschikking. De API lijkt zeer sterk op d
 
 Een derde framework voor het bouwen van chatbots is IBM Watson Assistant. Dit framework werkt ook gedeeltelijk op een andere manier dan de vorige onderzochte frameworks. Voor het ontwikkelen van een chatbot in IMB Watson Assistant zijn er drie grote stappen.
 
-De eerste stap is het maken van een 'Skill'. Onder de skill bevindt zich alle logica van de bot, de bot wordt hier getraind. Een skill kan hier vergeleken worden met een App dat je eerst moet maken bij de vorige frameworks. Eerst en vooral dien je een skill aan te maken. Een skill heeft een naam, de taal waarin tegen de bot zal gesproken worden en eventueel een omschrijving. Eénmaal  deze skill is aangemaakt kan je zeer eenvoud intents maken en aan elke intent utterances toevoegen.
+De eerste stap is het maken van een 'Skill'. Onder de skill bevindt zich alle logica van de bot, de bot wordt hier getraind. Een skill kan hier vergeleken worden met een App dat eerst moet worden gemaakt bij de vorige frameworks. Eerst en vooral dient een skill te worden aangemaakt. Een skill heeft een naam, de taal waarin tegen de bot zal gesproken worden en eventueel een omschrijving. Eenmaal deze skill is aangemaakt, kunnen er zeer eenvoudig intents worden aangemaakt en aan elke intent utterances worden toegevoegd.
 
 \begin{figure}[h!]
 	\centering
@@ -145,7 +145,7 @@ De eerste stap is het maken van een 'Skill'. Onder de skill bevindt zich alle lo
 	\label{fig:intentsIbm}
 \end{figure}
 
-Na het aanmaken van een bepaalde intent wordt er naar de detailpagina van deze intent genavigeerd. Op deze pagina kan je utterances toevoegen aan deze intent. De werking van dit toevoegen lijkt zeer sterk op die van LUIS. Een entity kan hier ook zeer makkelijk aangeduid worden door de gewenst woorden te selecteren en de juiste entity aan te klikken. Indien de entity nog niet bestaat kan je deze hier even snel direct aanmaken en toewijzen.
+Na het aanmaken van een bepaalde intent wordt er naar de detailpagina van deze intent genavigeerd. Op deze pagina kunnen utterances worden toegevoegd aan deze intent. De werking van dit toevoegen lijkt zeer sterk op die van LUIS. Een entity kan hier ook zeer makkelijk aangeduid worden door de gewenste woorden te selecteren en de juiste entity aan te klikken. Indien de entity nog niet bestaat, kan deze hier even snel direct worden aangemaakt en toegewezen.
 
 \begin{figure}[h!]
 	\centering
@@ -163,9 +163,9 @@ Het trainen van de Skill gaat hier vanzelf. Daarna kan de bot al eens getest wor
 	\label{fig:tryIbm}
 \end{figure}
 
-De tweede stap in dit proces is het deployen van de skill met een assistant. In deze stap wordt de skill aan een assistant gelinkt. Hierin is het eerst nodig om een nieuw assistant te maken. Alleen een naam is vereist, een beschrijving is optioneel. Eénmaal de assistant is gecreëerd, kan er een skill worden aan toegevoegd. Daarna kan je een kanaal kiezen waarop je de bot kan deployen. Hierbij is er ook een preview waarop kan worden getest.
+De tweede stap in dit proces is het deployen van de skill met een assistant. In deze stap wordt de skill aan een assistant gelinkt. Hierin is het eerst nodig om een nieuw assistant te maken. Alleen een naam is vereist, een beschrijving is optioneel. Eénmaal de assistant is gecreëerd, kan er een skill worden aan toegevoegd. Daarna kan er een kanaal worden gekozen waarop de bot kan worden gedeployed. Hierbij is er ook een preview waarop kan worden getest.
 
-De utterances waarvan de assistant niet zeker is bij welke intent deze horen worden bijgehouden en kunnen teruggevonden worden onder het tabblad 'Analytics'. Hier kan je doorklikken naar de 'Weak understandings'. Hierin kan je de utterances linken aan de juiste intent. Wat verschillend is met vorige frameworks is dat de assistant geen enkele intent aanbeveelt aan de hand van scores. Hier moet er 100 percent zelf worden nagedacht bij welke intent deze hoort.
+De utterances waarvan de assistant niet zeker is bij welke intent deze horen, worden bijgehouden en kunnen teruggevonden worden onder het tabblad 'Analytics'. Hier kan er worden doorgeklikt naar de 'Weak understandings'. Hierin kunnen de utterances worden gelinkt aan de juiste intent. Wat verschillend is met vorige frameworks is dat de assistant geen enkele intent aanbeveelt aan de hand van scores. Hier moet er 100 percent zelf worden nagedacht bij welke intent deze hoort.
 
 \begin{figure}[h!]
 	\centering
@@ -174,14 +174,14 @@ De utterances waarvan de assistant niet zeker is bij welke intent deze horen wor
 	\label{fig:weak}
 \end{figure}
 
-IBM Watson Assistant heeft ook een API. Deze API is zeer uitgebreid en bevat zo goed als alle aspecten van de site zelf. Van het creëren van een intent tot het toevoegen van nieuwe utterances en veel meer. In vergelijking met vorige frameworks heeft de assistant van IBM ook een endpoint voor het ophalen van utterances waarvan de assistant niet zeker is. Het enige probleem hier is dat IBM geen scores voorziet bij een utterance dus zal er altijd manuele controle nodig zijn. De niet gelinkte utterancers kunnen hier wel opgehaald worden met een eigen applicatie maar de scores ontbreken dus zal er niet automatisch kunnen gecontroleerd worden of deze utterance is gelinkt met de juiste intent.
+IBM Watson Assistant heeft ook een API. Deze API is zeer uitgebreid en bevat zo goed als alle aspecten van de site zelf. Van het creëren van een intent tot het toevoegen van nieuwe utterances en veel meer. In vergelijking met vorige frameworks heeft de assistant van IBM ook een endpoint voor het ophalen van utterances waarvan de assistant niet zeker is. Het enige probleem hier is dat IBM geen scores voorziet bij een utterance, dus zal er altijd manuele controle nodig zijn. De niet gelinkte utterances kunnen hier wel opgehaald worden met een eigen applicatie maar de scores ontbreken, dus zal er niet automatisch kunnen gecontroleerd worden of deze utterance is gelinkt met de juiste intent.
 
 \subsection{Dialogflow}
 \label{dialogflow}
 
-Dialogflow is een chatbot framework gemaakt door Google. Net zoals de vorige frameworks heb je hier de mogelijkheid om op een relatief eenvoudige manier een chatbot op te zetten. Hierbij is de eerste stap om een 'Agent' te maken. Dit wordt gedaan door de naam van de Agent, de taal die je tegen de bot zal praten en de tijdzone in te geven.
+Dialogflow is een chatbot framework gemaakt door Google. Net zoals de vorige frameworks is er hier de mogelijkheid om op een relatief eenvoudige manier een chatbot op te zetten. Hierbij is de eerste stap om een 'Agent' te maken. Dit wordt gedaan door de naam van de Agent, de taal diede er zal worden gesproken tegen de bot en de tijdzone in te geven.
 
-Een intent aanmaken is hier ook zeer eenvoudig, dit kan door de naam van de intent in te geven. Daarna kunnen er al direct utterances aan toegevoegd worden bij 'Training phrases' zoals er wordt getoond in afbeelding \ref{fig:intentsdialogflow}. De entities kunnen ook toegevoegd worden aan de intent door deze te selecteren en de juiste entity te kiezen. Hierbij zijn er al een aantal ingebouwde entities voorzien. Indien de entity niet in de lijst staat kan er een nieuwe worden aangemaakt in het 'Entities' tabblad, dit kan eenvoudigweg door de naam van de entity in te vullen.
+Een intent aanmaken is hier ook zeer eenvoudig, dit kan door de naam van de intent in te geven. Daarna kunnen er al direct utterances aan toegevoegd worden bij 'Training phrases' zoals er wordt getoond in afbeelding \ref{fig:intentsdialogflow}. De entities kunnen ook toegevoegd worden aan de intent door deze te selecteren en de juiste entity te kiezen. Hierbij zijn er al een aantal ingebouwde entities voorzien. Indien de entity niet in de lijst staat, kan er een nieuwe worden aangemaakt in het 'Entities' tabblad, dit kan eenvoudigweg door de naam van de entity in te vullen.
 
 \begin{figure}[h!]
 	\centering
@@ -190,7 +190,7 @@ Een intent aanmaken is hier ook zeer eenvoudig, dit kan door de naam van de inte
 	\label{fig:intentsdialogflow}
 \end{figure}
 
-Deze gemaakte intents met de toepasselijk toegevoegde utterances kunnen al direct getest worden door de console die is voorzien. Er kan al voorbeeld 'Hi, I'm Ivor' gebruikt worden. Hierin kan gezien worden op afbeelding \ref{fig:testdialogflow} dat deze input wordt geanalyseerd door de bot. Deze ziet dat de voorbeeldzin past bij de juiste intent 'Greeting' en dat de waarde 'Ivor' een entity is.
+Deze gemaakte intents met de toepasselijk toegevoegde utterances kunnen al direct getest worden door de console die is voorzien. Er kan als voorbeeld 'Hi, I'm Ivor' gebruikt worden. Hierin kan gezien worden op afbeelding \ref{fig:testdialogflow} dat deze input wordt geanalyseerd door de bot. Deze ziet dat de voorbeeldzin past bij de juiste intent 'Greeting' en dat de waarde 'Ivor' een entity is.
 
 \begin{figure}[h!]
 	\centering
@@ -199,7 +199,7 @@ Deze gemaakte intents met de toepasselijk toegevoegde utterances kunnen al direc
 	\label{fig:testdialogflow}
 \end{figure}
 
-Bij dialogflow heb je ook de kans om de utterances die de gebruiker ingeeft waarvan de bot niet zeker is bij welke intent deze horen te bekijken en te valideren. Hier is er zowat hetzelfde probleem als bij de IBM Watson Assistant, als dialogflow echt niet zeker is van de intent zal er in de testconsole de intent 'default failback intent' komen. Bij het training tabblad dien je dan zelf te kijken welke intent hier dan exact bij hoort en dialogflow zal niet suggereren. Er zijn hier ook geen percentages, dus je kan niet zien waaraan dialogflow een bepaalde utterance zou linken die niet direct herkend wordt.
+Bij dialogflow is er ook de kans om de utterances die de gebruiker ingeeft waarvan de bot niet zeker is bij welke intent deze horen te bekijken en te valideren. Hier is er zowat hetzelfde probleem als bij de IBM Watson Assistant, als dialogflow echt niet zeker is van de intent zal er in de testconsole de intent 'default failback intent' komen. Bij het training tabblad dient er dan zelf te worden gekeken welke intent hier dan exact bij hoort en dialogflow zal niet suggereren wie welke deze hoort. Er zijn hier ook geen percentages, dus er kan niet worden gezien waaraan dialogflow een bepaalde utterance zou linken die niet direct herkend wordt.
 
 \begin{figure}[h!]
 	\centering
@@ -208,21 +208,21 @@ Bij dialogflow heb je ook de kans om de utterances die de gebruiker ingeeft waar
 	\label{fig:trainingdialogflow}
 \end{figure}
 
-Dialogflow heeft ook een API. Deze kan zogoed als enkel het noodzakelijkste, zoals intent en entities aanmaken en utterances toevoegen en nog enkele zaken. Via de API kunnen de utterances van de gebruikers waarvan dialogflow niet weet bij welke intent die past niet opgevraagd worden. Deze kunnen dus niet worden geïntegreerd in een eigen applicatie om die automatisch bij de juiste intent toe te wijzen. Ook zou hier nog een ander probleem zijn zoals bij IBM Watson Assistant dat er geen percentages worden weergegeven. Moest er zelf een API voor zijn om deze op te halen zouden ze niet automatisch kunnen toegewezen worden door het gebrek aan deze percentages van zekerheid.
+Dialogflow heeft ook een API. Deze kan zogoed als enkel het noodzakelijkste, zoals intent en entities aanmaken en utterances toevoegen en nog enkele zaken. Via de API kunnen de utterances van de gebruikers waarvan dialogflow niet weet bij welke intent die past niet opgevraagd worden. Deze kunnen dus niet worden geïntegreerd in een eigen applicatie om die automatisch bij de juiste intent toe te wijzen. Ook zou hier nog een ander probleem zijn zoals bij IBM Watson Assistant dat er geen percentages worden weergegeven. Moest er zelf een API voor zijn om deze op te halen, zouden ze niet automatisch kunnen toegewezen worden door het gebrek aan deze percentages van zekerheid.
 
 \subsection{Andere frameworks}
 \label{andereFrameworks}
 
-Verder zijn er nog een aantal frameworks bekeken en vergeleken zoals Amazon Lex, BotKit, BotPress, BotMan, Rasa Stack, SAP Conversational AI, enz. Al snel was er ingezien dat ofwel brachten deze frameworks dezelfde problemen met zich mee zoals de al vergeleken frameworks ofwel hadden deze frameworks geen API die kon worden gebruikt. 
+Verder zijn er nog een aantal frameworks bekeken en vergeleken zoals Amazon Lex, BotKit, BotPress, BotMan, Rasa Stack, SAP Conversational AI, enz. Al snel was er ingezien dat deze frameworks dezelfde problemen met zich mee brachten zoals de al vergeleken frameworks ofwel hadden deze frameworks geen API die kon worden gebruikt. 
 
 \subsection{Conclusie frameworks}
 \label{conclusieFrameworks}
 
-Bij geen enkel van de onderzochte frameworks is het mogelijk om via de API de utterances op te halen waarvan het framework niet zo goed weet of hij ze gelinkt heeft aan de correcte intent. Om dan zo via deze API call al deze utterances op te halen en te verwerken in een eigen applicatie die er dan voor zorgt dat deze automatisch worden gecontroleerd en gelinkt worden aan de juiste intent enkel als de zekerheid groot genoeg is. Als de zekerheid niet goed is, met andere woorden als de applicatie twijfelt tussen 2 intents omdat de percentages van deze veel te dicht bij elkaar liggen zal er niets gedaan worden en zal deze handmatig moeten worden gecontroleerd. Eénmaal gecontroleerd zou de utterance via een andere API call kunnen toegevoegd worden aan de juiste intent in het framework zelf. Zo zouden maar een beperkt aantal van de utterances handmatig moeten gecontroleerd worden doordat er al veel automatisch worden verwerkt.
+Bij geen enkel van de onderzochte frameworks is het mogelijk om via de API de utterances op te halen waarvan het framework niet zo goed weet of hij ze gelinkt heeft aan de correcte intent. Om dan zo via deze API call al deze utterances op te halen en te verwerken in een eigen applicatie, die er dan voor zorgt dat deze automatisch worden gecontroleerd en gelinkt worden aan de juiste intent enkel als de zekerheid groot genoeg is. Als de zekerheid niet goed is, met andere woorden als de applicatie twijfelt tussen 2 intents omdat de percentages van deze veel te dicht bij elkaar liggen, zal er niets gedaan worden en zal deze handmatig moeten worden gecontroleerd. Eenmaal gecontroleerd zou de utterance via een andere API call kunnen toegevoegd worden aan de juiste intent in het framework zelf. Zo zouden maar een beperkt aantal van de utterances handmatig moeten gecontroleerd worden doordat er al veel automatisch worden verwerkt.
 
 Dit alles is niet mogelijk door de beperkingen van de API's van deze frameworks of doordat er geen scores (percentages) worden meegeleverd met de API call.
 
-Er is echter wel een manier om dit alles mogelijk te maken door het op een andere manier aan te pakken. Namelijk door alle input van gebruikers op te vangen in een eigen applicatie, deze input daarna door te sturen naar de bot zelf en de resultaten opvangen. Hierin krijg je te zien welke intents er aan deze utterance gelinkt worden met een percentage erbij. Bijvoorbeeld als er 'Hello' wordt gestuurd zullen er een paar intents worden teruggegeven. Hier bijvoorbeeld 'Greeting' met een percentage van 92 percent en 'Curse' met een percentage van 3 percent. Deze percentage verschillen heel veel. Op deze manier weet de applicatie dan direct dat hello bij de intent 'Greeting' hoort en zal deze utterance toevoegen aan deze intent. Indien de applicatie niet zeker is en de 2 percentages liggen te dicht bij elkaar of zijn beide veel te laag zal deze niet toegevoegd worden en zal deze utterance automatisch worden toegevoegd aan de lijst van de utterances waarvan de bot niet zeker is.
+Er is echter wel een manier om dit alles mogelijk te maken door het op een andere manier aan te pakken. Namelijk door alle input van gebruikers op te vangen in een eigen applicatie, deze input daarna door te sturen naar de bot zelf en de resultaten opvangen. Hierin wordt gezien welke intents er aan deze utterance gelinkt worden met een percentage erbij. Bijvoorbeeld als er 'Hello' wordt gestuurd, zullen er een paar intents worden teruggegeven. Hier bijvoorbeeld 'Greeting' met een percentage van 92 percent en 'Curse' met een percentage van 3 percent. Deze percentages verschillen heel veel. Op deze manier weet de applicatie dan direct dat hello bij de intent 'Greeting' hoort en zal deze utterance toevoegen aan deze intent. Indien de applicatie niet zeker is en de 2 percentages liggen te dicht bij elkaar of zijn beide veel te laag, zal deze niet toegevoegd worden en zal deze utterance automatisch worden toegevoegd aan de lijst van de utterances waarvan de bot niet zeker is.
 
-Het werken op deze manier zal uiteindelijk dezelfde resultaten bekomen. De utterances die dan worden geanalyseerd en uiteindelijk worden toegevoegd zullen niet meer in de lijst komen van utterances waarvan de bot niet zeker is. Dat is uiteindelijk de bedoeling van het uitwerken van de onderzoekvraag. De input van de gebruiker zal gedeeltelijk automatisch worden toegevoegd aan de juiste intent maar niet allemaal. Er zijn altijd utterances waarvan de chatbot geen goede suggesties kan weergeven en die zullen dan handmatig moeten worden toegevoegd. Hoe meer utterances per intent, hoe beter die suggesties zullen zijn. Dus hoe langer de chatbot in productie zou zijn, hoe minder utterances er handmatig zouden moeten worden gecontroleerd.
+Het werken op deze manier zal uiteindelijk dezelfde resultaten bekomen. De utterances die dan worden geanalyseerd en uiteindelijk worden toegevoegd, zullen niet meer in de lijst komen van utterances waarvan de bot niet zeker is. Dat is uiteindelijk de bedoeling van het uitwerken van de onderzoekvraag. De input van de gebruiker zal gedeeltelijk automatisch worden toegevoegd aan de juiste intent maar niet allemaal. Er zijn altijd utterances waarvan de chatbot geen goede suggesties kan weergeven en die zullen dan handmatig moeten worden toegevoegd. Hoe meer utterances per intent, hoe beter die suggesties zullen zijn. Dus hoe langer de chatbot in productie zou zijn, hoe minder utterances er handmatig zouden moeten worden gecontroleerd.
 

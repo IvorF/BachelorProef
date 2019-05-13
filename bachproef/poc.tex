@@ -36,33 +36,33 @@
 \chapter{\IfLanguageName{dutch}{Proof of concept}{Proof of concept}}
 \label{ch:poc}
 
-In dit onderdeel zal de proof of concept besproken worden. In deze proof of concept wordt er gebruik gemaakt van de Microsoft bot framework SDK en van LUIS.
+In dit onderdeel zal de proof of concept besproken worden. In deze proof of concept wordt er gebruikgemaakt van de Microsoft bot framework SDK en van LUIS.
 
 \section{Gekozen framework}
 \label{sec:framework}
 
 Uit het onderzoek is gebleken dat LUIS de juiste keuze is uit alle vergeleken frameworks voor het maken van bots. Het is belangrijk dat de API een goede toegankelijkheid heeft en dat er per weergegeven utterance informatie is over de verschillende intents en daarbij een percentage.
 
-Door de goede toegankelijkheid van de API is er een mogelijkheid om de interface van LUIS zelf achterwege te laten en LUIS bijna volledig in een eigen applicatie kan implementeren. Zoals het toevoegen van intents, entities, utterances. Het enige dat niet kan worden opgehaald zijn de 'review endpoint utterances'. Maar juist door de goede toegankelijkheid kan dit op een andere manier worden opgelost, besproken in de conclusie van vorige hoofdstuk.
+Door de goede toegankelijkheid van de API is er een mogelijkheid om de interface van LUIS zelf achterwege te laten en LUIS bijna volledig in een eigen applicatie te kunnen implementeren, zoals het toevoegen van intents, entities, utterances. Het enige dat niet kan worden opgehaald zijn de 'review endpoint utterances'. Maar juist door de goede toegankelijkheid kan dit op een andere manier worden opgelost, besproken in de conclusie van vorige hoofdstuk.
 
-Doordat LUIS bij elke utterance veel info teruggeeft over de intents waarbij deze kunnen behoren met daarbij dan nog eens de percentages van zekerheid dat een utterance bij een intent hoort kan er worden gekeken hoezeer LUIS zeker is dat een utterance bij die bepaalde intent hoort.
+Doordat LUIS bij elke utterance veel info teruggeeft over de intents waarbij deze kunnen behoren met daarbij dan nog eens de percentages van zekerheid dat een utterance bij een intent hoort, kan er worden gekeken hoezeer LUIS zeker is dat een utterance bij die bepaalde intent hoort.
 
-Dat zijn de belangrijkste zaken waarmee er rekening moet gehouden worden voor de onderzoeksvraag te kunnen uitwerken. In dit geval is er één van de frameworks daartoe in staat om deze zaken te garanderen. Wit.ai kwam in de buurt maar wit voorziet niet genoeg informatie bij elke utterance. Er wordt wel gebruik gemaakt van scores hier maar bij elke utterance is er maar 1 intent met score voorzien in vegelijking met LUIS waarbij je alle intents ziet met de score daarbij.
+Dat zijn de belangrijkste zaken waarmee er rekening moet gehouden worden voor de onderzoeksvraag te kunnen uitwerken. In dit geval is er één van de frameworks daartoe instaat om deze zaken te garanderen. Wit.ai kwam in de buurt maar wit voorziet niet genoeg informatie bij elke utterance. Er wordt wel gebruikgemaakt van scores hier maar bij elke utterance is er maar 1 intent met score voorzien in vergelijking met LUIS waarbij alle intents worden gezien met de score daarbij.
 
 Ook komt dit goed uit dat LUIS wordt gekozen als framework dat dit kan realiseren omdat de opdrachtgever Endare, zelf ook gebruik maakt van LUIS voor het ontwikkelen van chatbots en zijn daarmee het meest vertrouwd.
 
 \section{Opzetten LUIS}
 \label{sec:opzet}
 
-Voor de opzet van de LUIS intents en utterances is er mij een voorbeeld toegereikt van de opdrachtgever Endare, zodat ik mijn model niet van nul zou moeten beginnen. Vanaf dit voorbeeld kan er verder gewerkt worden door nieuwe intents toe te voegen zodat deze alsmaar beter wordt.
+Voor de opzet van de LUIS intents en utterances is er mij een voorbeeld toegereikt van de opdrachtgever Endare, zodat het model niet van nul zou moeten worden begonnen. Vanaf dit voorbeeld kan er verder gewerkt worden door nieuwe intents toe te voegen zodat deze alsmaar beter wordt.
 
 LUIS zal hier worden getraind als een soort van hulp bij de aankoop van producten en onderhoud en weergave van het account en winkelmandje. Zo kan er bijvoorbeeld producten worden toegevoegd aan het mandje, producten kunnen verwijderen, producten zoeken, hulp inroepen, het mandje tonen en verwijderen, het profiel tonen en aanpassen, enz.
 
-De intents dat zijn toegevoegd zijn: AddMore, ClearBasket, Curse, DeleteItem, FindItem, Greeting, Help, Joke, RemoveMore, ShowBasket, ShowProfile, Stop en UpdateProfile. Bij elke intent zijn er ongeveer 5 tot 10 utterances toegevoegd wat al een goed begin is voor het correct trainen van de bot.
+De intents die zijn toegevoegd zijn: AddMore, ClearBasket, Curse, DeleteItem, FindItem, Greeting, Help, Joke, RemoveMore, ShowBasket, ShowProfile, Stop en UpdateProfile. Bij elke intent zijn er ongeveer 5 tot 10 utterances toegevoegd, wat al een goed begin is voor het correct trainen van de bot.
 
-De entities die zich in LUIS bevinden zijn name, number en product waarvan number een ingebouwde entity is en de andere twee zelf gemaakte entities zijn. De naam dient als aanspreking bij de 'Greeting' intent. De entity 'number' is voor een hoeveelheid mee te geven bij bijvoorbeeld de intent 'AddMore', zodat er meerdere producten kunnen toegevoegd worden. De entity 'product' is voor te weten over welk product er gesproken wordt.
+De entities die zich in LUIS bevinden zijn name, number en product waarvan number een ingebouwde entity is en de andere twee zelf gemaakte entities zijn. De naam dient als aanspreking bij de 'Greeting' intent. De entity 'number' is voor een hoeveelheid mee te geven bij bijvoorbeeld de intent 'AddMore', zodat er meerdere producten kunnen worden toegevoegd. De entity 'product' is voor te weten over welk product er gesproken wordt.
 
-LUIS is volledig in het engels geschreven omdat engels de taal is dat het beste wordt begrepen door LUIS. Dit zal dan ook resulteren in betere resultaten als een gebruiker praat tegen de bot. Indien de bot nederlands moet verstaan kunnen er twee dingen gebeuren. Ofwel maak je een andere LUIS applicatie aan volledig in het nederlands ofwel steek je er een middleware tussen die de nederlandse tekst omzet naar het engels zodat de engelstalige versie van LUIS alles verstaat. De beste en gemakkelijkste optie is het tweede omdat er ten eerste minder werk zal zijn. Er zal maar 1 LUIS app moeten gemaakt worden, dus enkel in het engels. Ook zal luis beter werken omdat hij engels beter verstaat dan het nederlands.
+LUIS is volledig in het Engels geschreven omdat Engels de taal is dat het beste wordt begrepen door LUIS. Dit zal dan ook resulteren in betere resultaten als een gebruiker praat tegen de bot. Indien de bot Nederlands moet verstaan kunnen er twee dingen gebeuren. Ofwel  kan er een andere LUIS applicatie aangemaakt worden volledig in het Nederlands ofwel kan er een middleware worden tussengestoken die de Nederlandse tekst omzet naar het Engels zodat de Engelstalige versie van LUIS alles verstaat. De beste en gemakkelijkste optie is het tweede omdat er ten eerste minder werk zal zijn. Er zal maar 1 LUIS app moeten gemaakt worden, dus enkel in het Engels. Ook zal LUIS beter werken omdat hij Engels beter verstaat dan het Nederlands.
 
 \section{Software}
 \label{sec:POC}
@@ -70,28 +70,28 @@ LUIS is volledig in het engels geschreven omdat engels de taal is dat het beste 
 \subsection{Node.js en TypeScript}
 \label{ts}
 
-De keuze om de applicatie te ontwikkelen met Node.js in TypeScript was niet zo moeilijk. Omdat er bij Endare, het bedrijf die met de onderzoeksvraag is gekomen wordt gewerkt met Node.js is de keuze snel gemaakt om het met Node.js te maken. Door dit te doen met de gebruikelijke tools van dat bedrijf zorgt er voor eventueel latere implementatie een gebruiksgemak doordat de taal hetzelfde is en niet zal moeten worden omgezet. Daardoor ook de keuze om het in TypeScript te maken in de plaats van JavaScript omdat Endare is overgestapt naar TypeScript.
+De keuze om de applicatie te ontwikkelen met Node.js in TypeScript was niet zo moeilijk. Omdat er bij Endare, het bedrijf die met de onderzoeksvraag is gekomen, wordt gewerkt met Node.js is de keuze snel gemaakt om het met Node.js te maken. Door dit te doen met de gebruikelijke tools van dat bedrijf zorgt er voor eventueel latere implementatie een gebruiksgemak doordat de taal hetzelfde is en niet zal moeten worden omgezet. Daardoor ook de keuze om het in TypeScript te maken in de plaats van JavaScript omdat Endare is overgestapt naar TypeScript.
 
 \subsection{Bot Framework Emulator}
 \label{emulator}
 
-Dit is een applicatie gemaakt voor ontwikkelaars voor het te kunnen testen van een chatbot. Met de emulator kan er met de bot gepraat worden via de user interface. Er is ook een inspector en een log waar de verzonden en ontvangen berichten verder in detail kunnen bekeken worden.
+Dit is een applicatie gemaakt voor ontwikkelaars voor het te kunnen testen van een chatbot. Met de emulator kan er met de bot gepraat worden via de user interface. Er is ook een inspector en een log waar de verzonden en ontvangen berichten verder in detail kunnen worden bekeken.
 
-Het is zeer eenvooudig om met de bot te verbinden. Als deze lokaal aan het runnen is op je eigen applicatie kan er geconnecteerd worden door enkel het localhost adres in te geven. Daarna is de emulator klaar om met de bot te praten.
+Het is zeer eenvoudig om met de bot te verbinden. Als deze lokaal aan het runnen is op een eigen applicatie kan er geconnecteerd worden door enkel het localhost adres in te geven. Daarna is de emulator klaar om met de bot te praten.
 
 \subsection{Microsoft Bot Framework}
 \label{botFramework}
 
-Voor het uitwerken van de proof of concept is ervoor gekozen om het Bot Framework SDK te gebruiken van Microsoft. Dit framework is veelgebruikt bij het ontwikkelen van chatbots omdat deze zeer veel mogelijkheden heeft voor het maken van bots. Deze kan gebruikt worden voor zowel simpele console applicaties tot zeer uitgebreide interfaces. Het Bot Framework SDK gebruikt restify, dat is een bekend framework voor het maken van webservices voor het maken van de web server van de bot.
+Voor het uitwerken van de proof of concept is ervoor gekozen om het Bot Framework SDK te gebruiken van Microsoft. Dit framework is veel gebruikt bij het ontwikkelen van chatbots omdat deze zeer veel mogelijkheden heeft voor het maken van bots. Deze kan gebruikt worden voor zowel simpele console applicaties tot zeer uitgebreide interfaces. Het Bot Framework SDK gebruikt restify, dat is een bekend framework voor het maken van webservices. Dit wordt hier gebruikt voor de webserver van de bot.
 
-Dit SDK heeft een systeem voor het maken van dialogs, er zijn veel ingebouwde zaken zoals kaarten met daarin knoppen, foto's, enz. Wat heel belangrijk is hier is dat er een mogelijkheid is voor het implementeren van AI frameworks. Wat hier zeker een noodzaak is en gebruik van zal gemaakt worden door LUIS te implementeren in het bot framework SDK.
+Dit SDK heeft een systeem voor het maken van dialogs, er zijn veel ingebouwde zaken zoals kaarten met daarin knoppen, foto's, enz. Wat heel belangrijk is, is dat er een mogelijkheid bestaat voor het implementeren van AI frameworks. Wat hier zeker een noodzaak is en gebruik van zal gemaakt worden door LUIS te implementeren in het bot framework SDK.
 
-Het installeren van de bot framework SDK (botbuilder) kan eenvoudig worden gedaan door simpelweg een commando in te geven. Daarna kan je onmiddelijk aan de slag met de botbuilder.
+Het installeren van de bot framework SDK (botbuilder) kan eenvoudig worden gedaan door simpelweg een commando in te geven. Daarna kan er onmiddellijk aan de slag worden gegaan met de botbuilder.
 
-Eerst en vooral dient er een HTTP server gecreëerd te worden. Hierop wordt de bot lokaal gehost zodat deze kan getest worden. De bot kan getest worden gebruik makende van de Bot Framework Emulator als deze HTTP server draait.
+Eerst en vooral dient er een HTTP server gecreëerd te worden. Hierop wordt de bot lokaal gehost zodat deze kan worden getest. De bot kan getest worden, gebruik makende van de Bot Framework Emulator als deze HTTP server draait.
 
 \medskip
-\begin{lstlisting}[caption=creatie van de HTTP server]
+\begin{lstlisting}[caption=Creatie van de HTTP server]
 // create HTTP server \\
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, () => {
@@ -99,10 +99,10 @@ server.listen(process.env.port || process.env.PORT || 3978, () => {
 });
 \end{lstlisting}
 
-Met de HTTP server alleen is er nog geen connectie met de botbuilder. Een connectie maken kan ook eenvoudig in enkele lijnen code. Daarna kun je LUIS koppelen aan deze connectie. Dit doe je aan de hand van het endpoint dat je krijgt wanneer je LUIS deployed op de site van LUIS zelf. Dan krijg je een link naar het endpoint. Deze link steek je best in de environment variables zodat deze veilig blijft naar de buitenwereld toe. Daarna moet kunnen geluisterd worden naar inkomende boodschappen die je bijvoorbeeld ingeeft in de bot framework emulator. 
+Met de HTTP server alleen is er nog geen connectie met de botbuilder. Een connectie maken kan ook eenvoudig in enkele lijnen code. Daarna kun  LUIS gekoppeld worden aan deze connectie. Dit wordt gedaan aan de hand van het endpoint dat verkregen wordt wanneer LUIS gedeployed wordt op de site van LUIS zelf. Dan ontstaat er een link naar het endpoint. Deze link wordt best in de environment variables gestoken zodat deze veilig blijft naar de buitenwereld toe. Daarna kan geluisterd worden naar inkomende boodschappen die bijvoorbeeld worden ingegeven in de bot framework emulator. 
 
 \medskip
-\begin{lstlisting}[caption=connectie en linken van LUIS]
+\begin{lstlisting}[caption=Connectie en linken van LUIS]
 // connection \\
 var conn = new builder.ChatConnector({
 	appId: process.env.MICROSOFT_APP_ID,
@@ -117,14 +117,14 @@ bot.recognizer(new builder.LuisRecognizer(process.env.LUIS_MODEL_URL));
 server.post("/api/messages", conn.listen());
 \end{lstlisting}
 
-Als al deze stappen gedaan zijn, is alles in gereedheid gebracht voor het kunnen verwerken van een bepaalde input. Dit wordt gedaan door dialogs. Aan de hand van de intent die je terug krijgt van luis voor een bepaalde input van een gebruiker, wordt telkens een andere dialog aangeroepen zodat de juiste actie kan worden ondernomen en het juiste resultaat kan teruggegeven worden.
+Als al deze stappen gedaan zijn, is alles in gereedheid gebracht voor het kunnen verwerken van een bepaalde input. Dit wordt gedaan door dialogs. Aan de hand van de intent die teruggekregen wordt van LUIS voor een bepaalde input van een gebruiker, wordt telkens een andere dialog aangeroepen zodat de juiste actie kan worden ondernomen en het juiste resultaat kan worden teruggegeven.
 
-Een dialog werk volgens de waterval methode. Dit betekend dat een dialog van functie naar functie kan gaan. Dit is zodat als eerst dit stukje code en dan dat stukje code als dat eerst gedaan is en zo voort. Zoals er kan gezien worden in Listing 4.3 wordt er eerst gevraagt naar de naam van de gebruiker. Als de gebruiker deze naam heeft ingegeven gaat er via de waterval methode naar de volgende functie gegaan worden waarbij de naam van de gebruiker wordt opgeslagen zodat de bot de naam blijft onthouden voor in de toekomst en wordt er een antwoord teruggestuurd naar de gebruiker.
+Een dialog werkt volgens de watervalmethode. Dit betekent dat een dialog van functie naar functie kan gaan. Dit is zodat als eerst dit stukje code en dan dat stukje code als dat eerst gedaan is, enz. Zoals er kan gezien worden in Listing 4.3 wordt er eerst gevraagd naar de naam van de gebruiker. Als de gebruiker deze naam heeft ingegeven, gaat er via de watervalmethode naar de volgende functie gegaan worden waarbij de naam van de gebruiker wordt opgeslagen zodat de bot de naam blijft onthouden voor in de toekomst en wordt er een antwoord teruggestuurd naar de gebruiker.
 
-Dit is een eenvoudig voorbeeld, er kan hierin veel verder gegaan worden, er kan bijvoorbeeld in een dialog een andere dialog aangeroepen worden. Als de naam bijvoorbeeld nog niet geweten is kan er een dialog worden aangeroepen voor de naam op te vragen maar indien deze wel al geweten is kan er gewoon verder worden gegaan met de volgende stap in de waterval.
+Dit is een eenvoudig voorbeeld, er kan hierin veel verdergegaan worden, er kan bijvoorbeeld in een dialog een andere dialog aangeroepen worden. Als de naam bijvoorbeeld nog niet geweten is, kan er een dialog worden aangeroepen voor de naam op te vragen maar indien deze wel al geweten is, kan er gewoon verder worden gegaan met de volgende stap in de waterval.
 
 \medskip
-\begin{lstlisting}[caption=Waterval methode]
+\begin{lstlisting}[caption=Watervalmethode]
 // dialog \\
 bot.dialog("/", [
 	function (sess, args, next) {
@@ -142,15 +142,15 @@ bot.dialog("/", [
 ]);
 \end{lstlisting}
 
-Dit is zowat de basis van de werking van de botbuilder. Er zijn hier dus nog veel meer mogelijkheden maar die liggen uit de scope van deze bachelorproef. Met deze basis kan er begonnen worden aan de uitwerking van de proof of concept.
+Dit is zowat de basis van de werking van de botbuilder. Er zijn hier dus nog veel meer mogelijkheden maar die liggen uit de scope van deze bachelorproef. Met deze basis kan er worden begonnen aan de uitwerking van de proof of concept.
 
 \section{Uitwerking}
 \label{sec:Uitwerking}
 
-Een eerste stap was het werkende krijgen van de botbuilder en daarna het linken van LUIS hieraan. Hoe LUIS wordt gelinkt met de botbuilder is uitgelegd in het vorige hoofdstuk. Hoe de verschillende intents van LUIS gelinkt zijn met de dialog zit nog een beetje anders in mekaar dan een simpele dialog voor het vragen en opslaan van een naam. per intent is er één dialog nodig en deze moet hieraan worden gelinkt. De code in Listing 4.4 is een basis dialog voor de intent 'AddMore'. Als deze intent wordt aangeroepen zal de gebruiker een bericht terug krijgen met de boodschap 'You reached AddMore intent'. Op deze manier kan er al gecontroleerd worden of de intents van LUIS juist gelinkt worden met de dialogs. Als er in de emultor bijvoorbeeld een zin wordt ingegeven 'Please add 5 more', dan zal de botbuilder het AddMore intent terug krijgen en zal deze willen linken aan de juiste dialog. Dit gebeurd door de 'triggerAction' te matchen aan de intent. De triggerAction zal bij dit voorbeeld zijn 'AddMore' en het antwoord van LUIS is ook 'AddMore'. Op deze manier zal de botbuilder kijken of dit ergens gelijk is, hier is dit het geval en zal deze bepaalde dialog aanroepen en de gepaste functies uitvoeren en uiteindelijk een boodschap terugsturen naar de gebruiker.
+Een eerste stap was het werkende krijgen van de botbuilder en daarna het linken van LUIS hieraan. Hoe LUIS wordt gelinkt met de botbuilder is uitgelegd in het vorige hoofdstuk. Hoe de verschillende intents van LUIS gelinkt zijn met de dialog zit nog een beetje anders in mekaar dan een simpele dialog voor het vragen en opslaan van een naam. Per intent is er één dialog nodig en deze moet hieraan worden gelinkt. De code in Listing 4.4 is een basis dialog voor de intent 'AddMore'. Als deze intent wordt aangeroepen zal de gebruiker een bericht terugkrijgen met de boodschap 'You reached AddMore intent'. Op deze manier kan er al gecontroleerd worden of de intents van LUIS juist gelinkt worden met de dialogs. Als er in de emulator bijvoorbeeld een zin wordt ingegeven 'Please add 5 more', dan zal de botbuilder het AddMore intent terugkrijgen en zal deze willen linken aan de juiste dialog. Dit wordt gedaan door de 'triggerAction' te matchen aan de intent. De triggerAction zal bij dit voorbeeld zijn 'AddMore' en het antwoord van LUIS is ook 'AddMore'. Op deze manier zal de botbuilder kijken of dit ergens gelijk is, hier is dit het geval en zal deze bepaalde dialog aanroepen en de gepaste functies uitvoeren en uiteindelijk een boodschap terugsturen naar de gebruiker.
 
 \medskip
-\begin{lstlisting}[caption=Waterval methode]
+\begin{lstlisting}[caption=Dialog]
 // dialog AddMore intent \\
 bot.dialog("/addMore", (sess, args) => {
 	sess.send(`You reached AddMore intent`);
@@ -159,14 +159,14 @@ bot.dialog("/addMore", (sess, args) => {
 });
 \end{lstlisting}
 
-De intent zelf en de entities kunnen makkelijk worden verkregen uit de args van de dialog. Bijvoorbeeld voor de volgende zin 'You need the AddMore met entity 5' als je ingeeft als input 'Add 5 more' te verkrijgen kan je simpelweg volgende lijn code gebruiken.
+De intent zelf en de entities kunnen makkelijk worden verkregen uit de args van de dialog. Bijvoorbeeld voor de volgende zin 'You need the AddMore met entity 5' als er wordt ingegeven als input 'Add 5 more' te verkrijgen, kan er simpelweg volgende lijn code gebruikt worden.
 
 \medskip
-\begin{lstlisting}[caption=gebruiken van args]
+\begin{lstlisting}[caption=Gebruiken van args]
 sess.send(`You need the "${args.intent.intent}" intent ${sess.dialogData.number === null ? '' : 'met entity ' + sess.dialogData.number.entity}`);
 \end{lstlisting}
 
-De 'sess.dialogData.number' komt uit de lokale opslag. Door elke intent te analyseren door de code in Listing 4.6 worden de entities uit uit de utterance gehaald en opgeslagen per dialog zodat deze gemakkelijk toegankelijk zijn voor verder te kunnen werken om uiteindelijk feedback te kunnen geven naar de gebruiker toe. 
+De 'sess.dialogData.number' komt uit de lokale opslag. Door elke intent te analyseren door de code in Listing 4.6 worden de entities uit de utterance gehaald en opgeslagen per dialog zodat deze gemakkelijk toegankelijk zijn voor verder te kunnen werken om uiteindelijk feedback te kunnen geven naar de gebruiker toe. 
 
 \medskip
 \begin{lstlisting}[caption=Analyseren van de intent]
@@ -181,11 +181,11 @@ Als alles correct werkt, LUIS die de input van de gebruiker aan de correcte inte
 
 Dit zal gebeuren door de boodschap zelf en de intents in de dialog door te geven naar een functie die zal controleren of deze bepaalde input kan worden toegevoegd in LUIS. Dat zal worden gedaan door de eerste en de tweede intent die LUIS meegeeft met een bepaalde input te controleren. Indien de eerste en de tweede intent zeer sterk verschillen van elkaar en als het percentage van de eerste intent hoog genoeg is zal deze input worden toegevoegd als utterance bij deze eerste intent.
 
-Door dat te doen zullen voor van de inputs niet meer bij de 'review endpoint utterances' komen en zullen er veel minder utterances moeten gecontroleerd worden, wat uiteindelijk het doel is van dit onderzoek.
+Door dat te doen, zullen de inputs niet meer bij de 'review endpoint utterances' komen en zullen er veel minder utterances moeten gecontroleerd worden, wat uiteindelijk het doel is van dit onderzoek.
 
-Deze functie controleert eerste de scores van de intents met elkaar en kijkt of deze voldoet aan de voorwaarden. De parameters kunnen altijd nog aangepast worden, deze worden onderzocht en geoptimaliseerd in het volgende hoofdstuk. Indien de voorwaarde voor het toevoegen van de input aan LUIS niet voldoen zal er niets gebeuren. Daardoor zal LUIS deze input toevoegen aan de 'Review endpoint utterances' tabblad zodat deze manueel kan bekeken worden. Als deze wel voldoet zal de API van LUIS worden aangesproken voor het toevoegen van deze input in LUIS.
+Deze functie controleert eerst de scores van de intents met elkaar en kijkt of deze voldoet aan de voorwaarden. De parameters kunnen altijd nog aangepast worden, deze worden onderzocht en geoptimaliseerd in het volgende hoofdstuk. Indien de voorwaarde voor het toevoegen van de input aan LUIS niet voldoen, zal er niets gebeuren. Daardoor zal LUIS deze input toevoegen aan de 'Review endpoint utterances' tabblad zodat deze manueel kan worden bekeken. Als deze wel voldoet, zal de API van LUIS worden aangesproken voor het toevoegen van deze input in LUIS.
 
-De code voor het aanspreken van het endpoint bevindt zich inListing 4.7. De body die de API verwacht moet in een bepaald formaat staat zodat deze begrepen wordt en de API deze kan verwerken. Eerst en vooral wordt dan het enpoint aangesproken van de API call met de juiste link. Met dit endpoint moeten een aantal parameters worden meegegeven. Eerst en vooral de methode, hierbij is dat een POST, er wordt data meegestuurd. Ook zijn er headers nodig. De eerste header is voor het formaat aan te duiden, hier is dat json. De tweede header is de subscription key voor de authenticatie. Als laatste en belangrijkste moet er een body worden meegegeven. Die body bevat een text, dat is de utterance zelf. De intentName is de intent waarbij deze utterance hoort, deze intentName wordt uit de intent gehaald die wordt meegegeven naar de functie. Als laatste kunnen er entities worden meegegeven die horen bij de intent met de locatie waar deze zich bevinden in de utterance. Dit is niet noodzakelijk want LUIS zoekt vanzelf de entities in een zin dus dit kan eventueel achterwege gelaten worden.
+De code voor het aanspreken van het endpoint bevindt zich in Listing 4.7. De body die de API verwacht, moet in een bepaald formaat staan zodat deze begrepen wordt en de API deze kan verwerken. Eerst en vooral wordt dan het endpoint aangesproken van de API call met de juiste link. Met dit endpoint moeten een aantal parameters worden meegegeven. Eerst en vooral de methode, hierbij is dat een POST, er wordt data meegestuurd. Ook zijn er headers nodig. De eerste header is voor het formaat aan te duiden, hier is dat json. De tweede header is de subscription key voor de authenticatie. Als laatste en belangrijkste moet er een body worden meegegeven. Die body bevat een text, dat is de utterance zelf. De intentName is de intent waarbij deze utterance hoort, deze intentName wordt uit de intent gehaald die wordt meegegeven naar de functie. Als laatste kunnen er entities worden meegegeven die horen bij de intent met de locatie waar deze zich bevinden in de utterance. Dit is niet noodzakelijk want LUIS zoekt vanzelf de entities in een zin, dus dit kan eventueel achterwege gelaten worden.
 
 \medskip
 \begin{lstlisting}[caption=Toevoegen van een input aan LUIS van een API call]
@@ -212,6 +212,6 @@ fetch('https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/3480e277-67
 .catch(() => console.log('Calling POST example has crashed'));
 \end{lstlisting}
 
-Dit is zowat het grootste werk voor het realiseren en uitwerken van de onderzoeksvraag. Hoe efficient dit alles is zal worden getest in het volgende hoofdstuk. Er zullen een aantal zinnen opgesteld worden die zullen worden meegegeven met LUIS zonder en met dit uitgewerkte systeem en zo zal er gekeken worden hoe efficient dit systeem is. Ook zal er gekeken worden naar de effectieve utterances die bij 'Review endpoint utterances' komen met en zonder het uitgewerkte systeem. Het optimaliseren van dit systeem zal zich ook in dit hoofdstuk bevinden, dit zal gebeuren door bepaalde parameters aan te passen zodat er een optimaal resultaat zal worden bekomen.
+Dit is zowat het grootste werk voor het realiseren en uitwerken van de onderzoeksvraag. Hoe efficiënt dit alles is, zal worden getest in het volgende hoofdstuk. Er zullen een aantal zinnen opgesteld worden die zullen worden meegegeven met LUIS zonder en met dit uitgewerkte systeem en zo zal er gekeken worden hoe efficiënt dit systeem is. Ook zal er gekeken worden naar de effectieve utterances die bij 'Review endpoint utterances' komen met en zonder het uitgewerkte systeem. Het optimaliseren van dit systeem zal zich ook in dit hoofdstuk bevinden, dit zal gebeuren door bepaalde parameters aan te passen zodat er een optimaal resultaat zal worden bekomen.
 
 %%chapter testen en grafieken en percentages van aantal automatisch

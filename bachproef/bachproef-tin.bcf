@@ -2125,20 +2125,19 @@
     <bcf:datasource type="file" datatype="bibtex">../voorstel/voorstel.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="5">Pollefliet2011</bcf:citekey>
-    <bcf:citekey order="6">assaf2017</bcf:citekey>
-    <bcf:citekey order="7">Kumar2017</bcf:citekey>
-    <bcf:citekey order="8">Dave2018</bcf:citekey>
-    <bcf:citekey order="9">Margaret2018</bcf:citekey>
-    <bcf:citekey order="10">Kevin2017</bcf:citekey>
-    <bcf:citekey order="11">Dina2019</bcf:citekey>
-    <bcf:citekey order="12">Eva2016</bcf:citekey>
-    <bcf:citekey order="13">Wit2019</bcf:citekey>
-    <bcf:citekey order="14">Kristian2011</bcf:citekey>
-    <bcf:citekey order="15">2</bcf:citekey>
-    <bcf:citekey order="16">1</bcf:citekey>
-    <bcf:citekey order="17">3</bcf:citekey>
-    <bcf:citekey order="18">4</bcf:citekey>
+    <bcf:citekey order="5">assaf2017</bcf:citekey>
+    <bcf:citekey order="6">Kumar2017</bcf:citekey>
+    <bcf:citekey order="7">Dave2018</bcf:citekey>
+    <bcf:citekey order="8">Margaret2018</bcf:citekey>
+    <bcf:citekey order="9">Kevin2017</bcf:citekey>
+    <bcf:citekey order="10">Dina2019</bcf:citekey>
+    <bcf:citekey order="11">Eva2016</bcf:citekey>
+    <bcf:citekey order="12">Wit2019</bcf:citekey>
+    <bcf:citekey order="13">Kristian2011</bcf:citekey>
+    <bcf:citekey order="14">2</bcf:citekey>
+    <bcf:citekey order="15">1</bcf:citekey>
+    <bcf:citekey order="16">3</bcf:citekey>
+    <bcf:citekey order="17">4</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">
