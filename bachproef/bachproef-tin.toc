@@ -114,6 +114,4 @@
 \contentsline {section}{\numberline {A.5}Verwachte conclusies}{51}{section.A.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {B}Testdata}{53}{appendix.B}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografie}{57}{appendix*.6}
 \contentsfinish 
