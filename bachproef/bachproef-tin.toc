@@ -49,21 +49,19 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Mogelijkheden}{23}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Ontdekken}{23}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Frameworks}{23}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Frameworks}{27}{section.3.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}LUIS}{27}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}LUIS}{23}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}Wit.ai}{27}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}IBM Watson Assistant}{29}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}IBM Watson Assistant}{28}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Dialogflow}{31}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Dialogflow}{30}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.5}Andere frameworks}{32}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.6}Conclusie frameworks}{33}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.6}Conclusie frameworks}{32}{subsection.3.2.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Proof of concept}{35}{chapter.4}
 \defcounter {refsection}{0}\relax 
@@ -77,9 +75,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.2}Bot Framework Emulator}{37}{subsection.4.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.3}Microsoft Bot Framework}{37}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.3}Microsoft Bot Framework}{38}{subsection.4.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Uitwerking}{39}{section.4.4}
+\contentsline {section}{\numberline {4.4}Uitwerking}{40}{section.4.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Resultaten}{43}{chapter.5}
 \defcounter {refsection}{0}\relax 
@@ -114,4 +112,6 @@
 \contentsline {section}{\numberline {A.5}Verwachte conclusies}{51}{section.A.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {B}Testdata}{53}{appendix.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliografie}{57}{appendix*.6}
 \contentsfinish 

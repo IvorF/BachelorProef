@@ -38,7 +38,7 @@ Deze bots zijn getraind aan de hand van een bepaalde hoeveelheid vragen. Voor el
 \subsection{Generalistische bot}
 \label{Generalistische bot}
 
-Deze bots gebruiken vooral data uit databases en zoekmachines maar kunnen de gebruiker ook koppelen aan diensten. Deze heeft geen specifieke taak maar kan op een grote selectie van vragen antwoorden. Eénmaal de gebruiker iets specifieker in detail wil gaan over een bepaald onderwerp, kan deze bot overgaan naar een specialisatiebot.
+Deze bots gebruiken vooral data uit databases en zoekmachines maar kunnen de gebruiker ook koppelen aan diensten. Deze heeft geen specifieke taak maar kan op een grote selectie van vragen antwoorden. Eenmaal de gebruiker iets specifieker in detail wil gaan over een bepaald onderwerp, kan deze bot overgaan naar een specialisatiebot.
 
 \subsection{Specialisatiebot}
 \label{Specialisatiebot}
@@ -79,7 +79,7 @@ Wanneer een bepaalde input van een gebruiker nog niet is opgenomen in het machin
 \section{Framework}
 \label{sec:Framework}
 
-Vandaag de dag bestaan er al veel API's die ontwikkelaars kunnen gebruiken voor AI/NLP-services. Zelf zonder veel kennis van deze kan deze makkelijk worden gebruikt. Luis.ai, Wit.ai zijn enkele voorbeelden van deze frameworks.
+Vandaag de dag bestaan er al veel API's die ontwikkelaars kunnen gebruiken voor AI/NLP-services. Zelfs zonder veel kennis van deze, kunnen ze makkelijk worden gebruikt. Luis.ai, Wit.ai zijn enkele voorbeelden van deze frameworks.
 
 \section{Luis.ai}
 \label{sec:Luis.ai}
@@ -101,13 +101,13 @@ Nadat een Luis model is gepubliceerd en input ontvangt, zijn er enkele methodes 
 
 De eerste methode is aan de hand van patronen. Deze zorgen voor betere accuraatheid zonder veel meer voorbeeldzinnen te hoeven toevoegen. In de voorbeeldzinnen staan veel synoniemen, verschillende lengtes van zinnen, verschillende woordvolgordes, enz. Een patroon kan de woordvolgorde veel beter begrijpen.
 
-De volgende methode werkt met woordengroeplijsten. Zo een lijst somt de woorden of zinnen op die verwant zijn met de applicatie. Wat Luis dan leert over 1 van die woorden in een lijst, wordt automatisch toegepast op die andere woorden of zinnen in die bepaalde lijst. Het doel is voor het verbeteren van het identificeren van de juiste intent en entiteiten.
+De volgende methode werkt met woordengroeplijsten. Zo een lijst somt de woorden of zinnen op die verwant zijn met de applicatie. Wat LUIS dan leert over één van die woorden in een lijst, wordt automatisch toegepast op die andere woorden of zinnen in die bepaalde lijst. Het doel is voor het verbeteren van het identificeren van de juiste intent en entiteiten.
 
 Er zijn 2 soorten types van lijsten. Een Interchangeable lijst is voor waarden die synoniemen zijn van mekaar. Een Non-interchangeable lijst is voor waarden die belangrijker zijn dan normale woorden. Dit helpt veel voor het bepalen van de juiste intent. Een Non-interchangeable lijst wordt ook gebruikt voor woorden die niet veel gebruikt worden of voor woorden of zinnen uit een andere taal, zo leert Luis rekening te houden met deze. Hierin bevinden zich meer de termen specifiek aan de applicatie. Bijvoorbeeld als de applicatie zal gaan over winkelen zullen er bepaalde termen gaande over winkelen zeer belangrijk zijn voor de app maar geen synoniemen zijn van mekaar.
 
 De laatste methode voor het verbeteren van de voorspellingen is het actieve bijleren van de bot. Luis selecteert hier inputs die hij niet zeker van is wat de juiste intent is en zet deze in een lijst. De bedoeling is dat deze gevalideerd en gekoppeld worden aan de juiste intent met de juiste entiteiten. Dit moet echter manueel gebeuren door de eigenaar van de applicatie. Als deze inputs allemaal gelinkt zijn aan de juiste intent kan het model opnieuw getraind worden.
 
-Luis plaatst inputs op de lijst waarvan hij helemaal niet zeker is waarbij deze behoort of waarbij hij twijfelt tussen 2 of meerdere intents.
+Luis plaatst inputs op de lijst waarvan hij helemaal niet zeker is waarbij deze behoort of waarbij hij twijfelt tussen twee of meerdere intents.
 
 Het doel van dit onderzoek is om een manier te vinden om de inputs op deze lijst niet 100\% handmatig te moeten linken aan de juiste intent.
 
@@ -121,7 +121,7 @@ Het doel van dit onderzoek is om een manier te vinden om de inputs op deze lijst
 	\label{fig:wit}
 \end{figure}
 
-Dit botframework is ontwikkeld door facebook. Wit helpt de gebruikers die iets zeggen tegen de chatbot van de app te verstaan. Wit dient ingesteld te worden door voorbeelden van zinnen toe te voegen net zoals Luis. Hoe meer voorbeelden er worden gegeven, hoe beter de bot de gebruikers zal begrijpen. De verzameling van voorbeeldzinnen voor 1 bepaalde intentie wordt dan gekoppeld aan de juiste intent. Er kan gemakkelijk gepraat worden met wit via de endpoint API. 
+Dit botframework is ontwikkeld door facebook. Wit helpt de gebruikers die iets zeggen tegen de chatbot van de app te verstaan. Wit dient ingesteld te worden door voorbeelden van zinnen toe te voegen net zoals Luis. Hoe meer voorbeelden er worden gegeven, hoe beter de bot de gebruikers zal begrijpen. De verzameling van voorbeeldzinnen voor 1 bepaalde intentie wordt dan gekoppeld aan de juiste intent. Er kan gemakkelijk gepraat worden met Wit via de endpoint API. 
 
 Net zoals bij Luis is er een inbox met zinnen die zijn ingegeven door een gebruiker in de chatbot zelf die manueel moeten gelinkt worden aan de juiste intent. Wit stelt zelf al voor bij welke intent hij een bepaalde zin zou plaatsen. Deze kan aangepast worden indien deze fout is en de zinnen valideren. Deze worden dan opgenomen in het model als deze opnieuw wordt getraind. Ook dit deel zoals in Luis zou moeten kunnen gedeeltelijk geautomatiseerd worden. ~\autocite{Wit2019}
 
